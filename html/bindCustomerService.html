@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>客服注册</title>
+		<style>
+			/* body { padding-bottom: 15px; background: url(../../img/reg/beijingtu.jpg) no-repeat #c9e3f9; background-size: 100% auto; } */
+		body{
+			background: #F6F6F6;
+		}
+		</style>
+		<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js" charset="utf-8"></script>
+		<script src="./../js/vue.min.js?edition=201911231625"></script>
+		<script src="./../js/jquery.min.js?edition=201911231625"></script>
+		<script src="./../js/rem.js?edition=201911231625"></script>
+		<script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js?edition=201911231625"></script>
+	</head>
+	<body>
+<!-- 		<div style="width: 100%;height: 100%;background: white;display: none;">
+			<img src="" />
+		</div> -->
+		
+		<div style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;margin-top: 20%;">
+			<div>
+				<img class="tispImg" src="../images/19.png" style="height: 2.6rem;" />
+			</div>
+			<div>
+				<span class="tispText" style="font-size:0.35rem">客服注册</span>
+			</div>
+			<div class="regButton" onclick="regService()" style="margin-top: 10%;font-size: 50px;padding: 0.2rem;display: flex;align-items: center;justify-content: center;width: 70%;background: #09bb07;color: white;border-radius: 2%;">
+				确认注册为客服
+			</div>
+		</div>
+		
+		
+		<script src="./../js/common.js?edition=201911231625"></script>
+		<script type="text/javascript" src="./../js/awardRotate.js?edition=201911231625"></script>
+		<script src="./../js/sweet-alert.min.js?edition=201911231625"></script>
+		<script type="text/javascript" src="./../js/ThreeCanvas.js?edition=201911231625"></script>
+		<script type="text/javascript" src="./../js/Snow.js?edition=201911231625"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js?edition=201911231625" type="text/javascript"></script>
+		<script>
+			var LIVE_ID = getQueryString("liveId");
+			var TOKEN_ID = getQueryString("token_id");
+			var STATUS = getQueryString("status");
+			
+			if(STATUS == 1){
+				//已经绑定为客服
+				$(".tispText").text("你已是客服");
+				$(".tispImg").attr("src","../images/20.png");
+				$(".regButton").hide();
+			}
+			
+			function regService(){
+				$.post(API_ROOT + "/client/live/bind/customer/service", {
+				    liveId: LIVE_ID,
+				    token_id: TOKEN_ID
+				}, function (data) {
+				    if (data.ret == "200") {
+						$(".tispText").text("注册成功");
+						$(".tispImg").attr("src","../images/20.png");
+						$(".regButton").hide();
+				    } else if (data.ret=="202"){
+				        $(".tispText").text("绑定失败,请按正确流程绑定");
+				        $(".tispImg").attr("src","../images/21.png");
+						$(".regButton").hide();
+				    } else {
+						$(".tispText").text("绑定失败");
+						$(".tispImg").attr("src","../images/21.png");
+						$(".regButton").hide();
+					}
+				})
+			}
+		</script>
+	</body>
+</html>

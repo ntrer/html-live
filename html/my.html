@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,no-cache, must-revalidate">
+    <link rel="stylesheet" href="./../css/my.css">
+    <script src="./../js/rem.js"></script>
+    <script src="./../js/jquery.min.js"></script>
+    <script src="./../js/common.js"></script>
+    <title>个人中心</title>
+    <style>
+        .compose-dynamic {
+            position: absolute;
+            top: 0rem;
+            width: 6rem;
+            height: 7rem;
+            z-index: 9999;
+            left: 0.6rem;
+            display: none;
+        }
+
+        .compose-dynamic img {
+            width: 100%;
+            display: block;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="my-wrap-b">
+        <div class="my-wrap">
+            <ul class="user">
+                <div class="return-box" onclick="returnPageIndex()">
+                    <img src="./../images/14.png" />
+                </div>
+                <li class="head-port">
+                    <img :src="" alt="" id="images">
+                </li>
+                <li class="user-inf">
+                    <p class="user-name" id="wechatName">微信名称</p>
+                    <!-- <div>
+                        <img :src="" alt="" id="sex">
+                    </div> -->
+<!--                    <div class="place" onclick="headPort()">
+                        <img src="./../images/medal4.png" alt="">
+                    </div> -->
+                </li>
+
+                <div class="invite-font" onclick="inviteClick()">
+                    <img src="./../images/invite.png" alt="">
+                </div>
+            </ul>
+            <div class="medal-list-wrap" id="listImg">
+            </div>
+			
+	<div class="synthesis-buttom" onclick="headPort()">
+		<img src="./../images/18.gif"/>
+	</div>
+
+
+            <div class="picture">
+                <div class="order">
+                    <div class="order-header">
+                        订单列表
+                    </div>
+                    <ul class="order-list" id="orderList"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="medal-black">
+
+            <div class="medal-black-content">
+                <div class="close-button" onclick="medalClose()">
+                    <img src="./../images/red-close.png" />
+                </div>
+                <div class="compose-img">
+                    <img src="./../images/17.gif" alt="" onclick="synThesis()" class="com-img">
+                </div>
+                <ul id="medalBot" class="medal-bottom-wrap">
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="popup-list"> -->
+        <ul class="popup-list-box" style="overflow-y:scroll;">
+            <div style="display: flex;margin: 0.4rem 0;">
+                <p style="margin: 0 auto;font-size: 18px;color: rgb(166, 122, 9);">已邀约</p>
+                <div class="popup-close" onclick="popupClose()">
+                    <img src="./../images/1.jpg" />
+                </div>
+            </div>
+            <div dom="popup-list">
+                <!-- 					<li class="popup-list-l">
+					    <div class="popup-list-left">
+					        <img src="./../images/img1.jpg" alt="">
+					    </div>
+					    <div class="popup-list-right">
+					        <span style="font-size: 14px;display: block;margin-top: 0.2rem;"></span>
+					        <p class="list-time">2141</p>
+					    </div>
+					</li> -->
+            </div>
+        </ul>
+        <!-- </div> -->
+    </div>
+
+
+    <div class="compose-dynamic">
+        <img src="./../images/medal9.gif" />
+    </div>
+	<div class="medal-list">
+<!-- 		<div class="medal-item">
+			<img src="./../images/medal5.png" />
+		</div>
+		<div class="medal-item">
+			<img src="./../images/medal5.png" />
+		</div>
+		<div class="medal-item">
+			<img src="./../images/medal5.png" />
+		</div>
+		<div class="medal-item">
+			<img src="./../images/medal5.png" />
+		</div> -->
+	</div>
+</body>
+
+</html>
+<script>
+    $(function () {
+		// var gifTime = setInterval({
+		// 	$(".compose-img img").attr("src","./../images/17.gif")
+		// },1000)
+		// $(".compose-img img").attr("src","./../images/17.gif?+${new Date().getTime()}");
+		
+		var imgText = "";
+		// var gifTime = setInterval({
+		// 	imgText = `<img src="./../images/17.gif?+${Math.random()}"  onclick="synThesis()" class="com-img" />`
+		// 	   $(".compose-img").append(imgText);
+		// },1000)
+		
+		var clearI = setInterval(function () {
+			$(".com-img").attr("src","./../images/17.gif");
+			// imgText = `<img src="./../images/17.gif?+${Math.random()}"  onclick="synThesis()" class="com-img" />`
+			//    $(".compose-img").html(imgText);
+		}, 1500);
+		
+        var live_val_Id = getQueryString("liveId");
+        var token_val_id = getQueryString("token_id");
+        var liveShareCustomerOpenId = getQueryString("liveShareCustomerOpenId");
+        var currentCustomerOpenId = getQueryString("currentCustomerOpenId");
+        $.post(API_ROOT + "/client/live/myinfoororder", {
+            liveId: live_val_Id,
+            token_id: token_val_id
+        }, function (data) {
+            if (data.ret == "200") {
+                $("#images").attr('src', data.data.liveCustomer.headPortraitImageUrl);
+                $("#wechatName").html(data.data.liveCustomer.wxNickName);
+                if (data.data.liveCustomer.sex == 1) {
+                    // $("#sex").html("男");
+                    $("#sex").attr('src', './../images/male.png');
+                } else {
+                    $("#sex").attr('src', './../images/female.png');
+                }
+                var html = "";
+                for (var i = 0; i < data.data.liveGoodsOrderList.length; i++) {
+                    html += '<li>' +
+                        '<div class="order-img">' +
+                        '<img src="' + API_ROOT + "/image/show/?token_id=" + token_val_id +
+                        "&loginOs=0&fileId=" + data.data.liveGoodsOrderList[i].liveGoods.titleImageId +
+                        '" alt="">' +
+                        '</div>' +
+                        '<div class="order-shop">' +
+                        '<b>' + data.data.liveGoodsOrderList[i].liveGoods
+                        .title + '</b>' +
+                        '<span>订单编号 ' + data.data.liveGoodsOrderList[i].liveGoodsOrderIdStr +
+                        '</span>' +
+                        '<p>下单时间 ' + data.data.liveGoodsOrderList[i].createTime + '</p>' +
+						'<p>数量 ' + data.data.liveGoodsOrderList[i].goodsNum + '</p>' +
+                        '</div>' +
+                        '</li>'
+                    $("#orderList").html(html);
+                    // if (data.data.liveGoodsOrderList.length >= 0) {
+                    //     $("#placeImg").attr('src', './../images/place.png')
+                    // } else {
+                    //     $("#placeImg").hide()
+                    // }
+                }
+            } else {
+                alert(data.msg)
+            }
+        })
+    })
+</script>
+<script>
+    // function(){  
+    // 	pushHistory();
+    // 	window.addEventListener("popstate", function(e) {
+    // 		WeixinJSBridge.invoke('closeWindow',{},function(res){ });
+    // 	}, false);  
+    // 	
+    // 	function pushHistory() {  
+    // 		var state = {  
+    // 			title: "title",  
+    // 			url: "#"  
+    // 		};  
+    // 		// window.history.pushState(state, "title", "#");  
+    // 		alert("123")
+    // 	}  
+    // }
+</script>
+<script>
+    function returnPageIndex() {
+        location.replace("/live/html/index.html?token_id=" + token_val_id + "&liveId=" + live_val_Id +
+            "&currentCustomerOpenId=" + currentCustomerOpenId +
+            "&liveShareCustomerOpenId=" + liveShareCustomerOpenId)
+    }
+
+    function medalClose() { //点击关闭隐藏
+        $('.medal-black').hide();
+    }
+	
+	var headCount = 0;
+    //我的可合成勋章列表
+    function headPort() {
+        $.post(API_ROOT + "/client/sure/synthetize/assemblemedal/list", {
+            liveId: live_val_Id,
+            token_id: token_val_id
+        }, function (data) {
+            if (data.ret == "200") {
+                var html = "";
+				var html2 = "";
+                for (var i = 0; i < data.data.liveReceiveAssembleMedalList.length; i++) {
+                    html2 += '<li id=' + data.data.liveReceiveAssembleMedalList[i].id + '>' +
+                        '<div class="medal-bot-img">' +
+                        '<img src="./../images/medal1.png" alt="">' +
+                        '</div>' +
+                        '<div class="medal-bot-inp">' +
+                        '<input type="checkbox">' +
+                        '</div>' +
+                        '</li>';
+                    html += '<div>' +
+						'<img src="./../images/medal1.png" alt="">' +
+                        '</div>';
+                }
+				// html += "<div class='synthesis-buttom' style='height:2rem;width:2rem;margin-top:-0.6rem' onclick='headPort()'> " + 
+				// 	"<img src='./../images/18.gif'/> " +
+				// 	"</div>";
+				if(html == ""){
+					$(".synthesis-buttom").show();
+				}
+				$("#listImg").html(html);
+				if(data.data.liveReceiveAssembleMedalList.length > 0){
+					// $("#medalBot").html(html2);
+					// $("#listImg").html(html);
+					// $('.medal-black').show();	
+					// $(".synthesis-buttom").show();
+					$('.medal-black').show();
+				}
+				$("#medalBot").html(html2);
+				$("#listImg").html(html);
+				if(headCount > 0){
+					$('.medal-black').show();	
+				}	
+				$(".synthesis-buttom").show();
+				headCount++;
+            }
+        })
+    }
+	
+	headPort();
+
+    //合成勋章
+    function synThesis() {
+        var num = $(".medal-bottom-wrap li").length;
+        var assembleMedalIds = "";
+        for (var i = 0; i < num; i++) {
+            var type = ""
+            type = $(".medal-bottom-wrap li").eq(i).children("div").eq(1).children("input").is(':checked');
+            medal = $(".medal-bottom-wrap li").eq(i).attr("id");
+            console.log(medal);
+            console.log(type);
+            if (type == true) {
+                assembleMedalIds += medal + ","
+            }
+        }
+        assembleMedalIds = assembleMedalIds.slice(0, assembleMedalIds.length - 1);
+        if (assembleMedalIds == null || assembleMedalIds == "" || assembleMedalIds ==
+            undefined) {
+				alert("请选择勋章");
+            return;
+        }
+
+        $.post(API_ROOT + "/client/synthetize/assemble/medal", {
+            liveId: live_val_Id,
+            token_id: token_val_id,
+            assembleMedalIds: assembleMedalIds
+        }, function (data) {
+            if (data.ret == "200") {
+                $(".compose-dynamic").show();
+                $(".medal-black-content").hide();
+                var time = setInterval(function () {
+                    $(".compose-dynamic").hide();
+                    $(".medal-bot-img").hide();
+                    alert("合成成功");
+                    window.location.reload()
+                }, 3000)
+            } else {
+                alert(data.msg)
+            }
+        })
+    }
+
+    //我的已合城勋章列表
+    $(function () {
+        $.post(API_ROOT + "/client/already/synthetize/assemblemedal/list", {
+            liveId: live_val_Id,
+            token_id: token_val_id
+        }, function (data) {
+            if (data.ret == "200") {
+                var html = ""
+                for (var i = 0; i < data.data.liveReceiveAssembleMedalList.length; i++) {
+                    // if (data.data.liveReceiveAssembleMedalList[i].level == 3 || data.data
+                    //     .liveReceiveAssembleMedalList.level == 0) {
+                    //     html += '<div>' +
+                    //         '<img src="./../images/medal4.png" alt="">' +
+                    //         '</div>'
+                    // }
+                    // if (data.data.liveReceiveAssembleMedalList[i].level == 2) {
+                    //     html += '<div>' +
+                    //         '<img src="./../images/medal6.png" alt="">' +
+                    //         '</div>'
+                    // }
+                    // if (data.data.liveReceiveAssembleMedalList[i].level == 1) {
+                    //     html +=
+                    //         '<div>' +
+                    //         '<img src="./../images/medal5.png" alt="">' +
+                    //         '</div>'
+                    // }
+					
+					if (data.data.liveReceiveAssembleMedalList[i].level == 3 || data.data
+					    .liveReceiveAssembleMedalList.level == 0) {
+						html += "<div class='medal-item'>" + 
+							"<img src='./../images/medal4.png' /> " +
+							"</div>";
+					}
+					if (data.data.liveReceiveAssembleMedalList[i].level == 2) {
+						html += "<div class='medal-item'>" + 
+							"<img src='./../images/medal6.png' /> " +
+							"</div>";
+					}
+					if (data.data.liveReceiveAssembleMedalList[i].level == 1) {
+						html += "<div class='medal-item'>" + 
+							"<img src='./../images/medal5.png' /> " +
+							"</div>";
+					}			
+                }
+                $(".medal-list").html(html);
+            }
+        })
+    })
+
+    //点击邀约人员
+    function inviteClick() {
+        $(".popup-list-box").show();
+        // $(".picture").hide();
+        $.post(API_ROOT + "/client/invitation/live/invitation/list", {
+            liveId: live_val_Id,
+            token_id: token_val_id,
+            openId: currentCustomerOpenId
+        }, function (data) {
+            if (data.ret == "200") {
+                var html = ""
+                for (var i = 0; i < data.data.list.length; i++) {
+                    html +=
+                        '<li class="popup-list-l">' +
+                        '<div class="popup-list-left">' +
+                        '<img src="' + data.data.list[i].headPortraitImageUrl + '" alt=""> ' +
+                        '</div>' +
+                        '<div class="popup-list-right"> ' +
+                        '<span style="font-size: 14px;display: block;margin-top: 0.2rem;">' + data.data.list[i]
+                        .wxNickName + '</span>' +
+                        '<p class="list-time">观看时长: ' + data.data.list[i].times + ' 分</p>' +
+                        '</div>' +
+                        '</li>';
+                }
+                $("[dom=popup-list]").html(html);
+            }
+        })
+    }
+
+    function popupClose() {
+        $(".popup-list-box").hide();
+        // $(".picture").show();
+    }
+</script>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Loading</title>
+		<link href="/css/normalize.css" rel="stylesheet" />
+		<style>
+			html, body { width: 100%; overflow-x: hidden; color: #666666; }
+    ul { margin: 0; padding: 0; }
+      ul * { margin: 0; padding: 0; }
+    img { max-width: 100%; }
+    .enterLog { margin-left: 10px; margin-right: 10px; }
+      .enterLog li { display: block; float: left; width: 12.5%; margin: 0; padding: 0; margin-bottom: 8px; }
+        .enterLog li img { border-radius: 50%; margin: 0; padding: 0; }
+        .enterLog li p { text-align: center; margin: 0; padding: 0; overflow: hidden; word-break: keep-all; white-space: nowrap; font-size: 10px; }
+    .orderLog { margin-left: 10px; margin-right: 10px; }
+      .orderLog li { display: block; width: 100%; clear: both; margin-bottom: 10px; }
+        .orderLog li > img { border-radius: 50%; margin: 0; padding: 0; height: 30px; width: auto; }
+        .orderLog li > div.nickName { margin: 0; padding: 0; height: 30px; line-height: 30px; margin-left: 8px; font-size: 12px; overflow: hidden; white-space: nowrap; }
+        .orderLog li > div.right { margin: 0; padding: 0; height: 30px; line-height: 15px; margin-left: 8px; font-size: 12px; overflow: hidden; white-space: nowrap; text-align: right; }
+
+    .clear { width: 100%; clear: both; height: 0; overflow: hidden; }
+    .covers { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 9999999; background: rgba(0, 0, 0, 0.8); }
+      .covers > div { display: table-cell; vertical-align: middle; text-align: center; width: 100%; height: 100%; color: white; }
+        .covers > div input[type=button] { padding: 10px; background-color: #eee; border: 0; margin-top: 20px; }
+    .covers1 { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 9999999; background: rgba(0, 0, 0, 0.8); }
+      .covers1 > div { display: table-cell; vertical-align: middle; text-align: center; width: 100%; height: 100%; color: white; }
+        .covers1 > div input[type=button] { padding: 10px; background-color: #eee; border: 0; margin-top: 20px; }
+    .content-box { margin-left: 10px; margin-right: 10px; clear: both; border: #ccc solid 1px; box-shadow: 3px 3px 9px #ccc; padding-bottom: 15px; }
+    .mt15 { margin-top: 15px; }
+    .mt10 { margin-top: 10px; }
+    .ta-center { text-align: center; }
+    .ta-right { text-align: right; }
+    body { padding-bottom: 15px; background: url(/img/reg/beijingtu.jpg) no-repeat #c9e3f9; background-size: 100% auto; }
+
+    .content-box-2 { border-radius: 8px; margin-left: 15px; margin-right: 15px; clear: both; border: #ccc solid 1px; padding-bottom: 15px; }
+      .content-box-2 .header { color: #555; border-bottom: 1px solid #ccc; }
+    ::-webkit-scrollbar { width: 0; height: 0; background-color: rgba(240,240,240,0) }
+    .covers * { max-width: 100%; }
+    .covers img { display: block; }
+    .covers1 * { max-width: 100%; }
+    .covers1 img { display: block; }
+
+    .hr1 { width: 100%; margin-left: auto; margin-right: auto; margin-top: 10px; height: 11px; border-top: 1px solid #ddd; overflow: hidden; clear: both; }
+    .discuss li { display: block; width: 100%; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px; }
+    .fc-light { color: #999; }
+    .fl { float: left; }
+    .fr { float: right; }
+    ::-webkit-input-placeholder { /* WebKit browsers */ color: #ccc; }
+    .mt20 { margin-top: 20px; }
+    .defaultTable { width: 100%; color: rgb(136, 186, 266); }
+      .defaultTable > tbody > tr > td { padding: 0; height: 60px; border-bottom: 1px solid rgb(136, 186, 266); white-space: nowrap; }
+      .defaultTable tr td input, select { border: 0; background-color: inherit; }
+    .hide { display: none; }
+  </style>
+
+
+
+	</head>
+	<body>
+		<div style="margin-top: 50px; font-size: 0;">
+			<img src="/img/reg/A1.png" />
+		</div>
+		<div style="margin-left: 20px; margin-right: 20px; background-color: white;border-radius: 30px; padding: 20px;">
+			<form id="defaultForm">
+				<table class="defaultTable" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>品牌</td>
+						<td>
+							<select name="brandId" style="width: 100%;"></select>
+						</td>
+					</tr>
+					<tr>
+						<td>姓名</td>
+						<td>
+							<input type="text" name="guideName">
+						</td>
+					</tr>
+					<tr>
+						<td>手机号</td>
+						<td>
+							<table style="width: 100%;">
+								<tr>
+									<td><input type="text" name="phone" style="width: 90%;"></td>
+									<td>
+										<img class="fr" src="/img/btnGetSms.png" style="height: 30px;" onclick="javascript:sendSms();" id="btnGetSms" />
+										<span id="btnGetSmsTimer" class="fr" style="display: none; padding: 8px 0;">正在发送</span>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>验证码</td>
+						<td>
+							<input type="text" name="code">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="line-height: 40px;">
+							<span class="fl">微信名片</span>
+							<input type="hidden" name="headId" />
+							<img style="height: 30px; width: 30px; margin-top: 5px;" id="cbImg" class="fl hide" />
+							<img onclick="$('#fileUpload').click();" src="/img/reg/shangchuantupian.png" class="fr" style="height: 30px; margin-top: 5px;" />
+							<input type="file" onchange="fileLoad(this)" id="fileUpload" style="display: none;" />
+						</td>
+					</tr>
+				</table>
+				<div style="margin-left: 45px; margin-right: 45px;" class="mt20">
+					<img src="/img/reg/xiayibu.png" style="margin-left: auto; margin-right: auto;" onclick="submitReg()" />
+				</div>
+			</form>
+		</div>
+
+		<div style="margin-top: 20px; margin-left: 20px; margin-right: 20px;"><img dom="headImage" style="width: 100%; border-radius: 30px;" /></div>
+
+
+		<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js" type="text/javascript"></script>
+		<script src="/js/h5Common.js"></script>
+
+		<script>
+			var OPEN_ID = getQueryString("openId");
+			var LIVE_ID = getQueryString("liveId");
+		</script>
+		<script>
+			// $.get(API_ROOT + "/client/activity/details/?id=" + ACTIVITY_ID, function(result) {
+			// 	// document.title = result.data.merchantActivity.activityName;
+			// 	$("[dom=headImage]").attr("src", API_ROOT + "/image/show/?token_id=" + TOKEN_ID + "&loginOs=0&fileId=" + result.data
+			// 		.merchantActivity.activityImage);
+			// });
+		</script>
+
+
+		<script>
+			function submitReg() {
+				$.post(API_ROOT + "/sys/live/guide/register", $("#defaultForm").serialize() + "&activityId=" + ACTIVITY_ID +
+					"&token_id=" + TOKEN_ID + "&openId=" + OPEN_ID+"&liveId=" + LIVE_ID,
+					function(result) {
+						if (result.ret != "200") {
+							alert(result.msg);
+						} else {
+							location.href = result.data;
+							//location.href = "/h5.html?activityId=" + ACTIVITY_ID + "&userId=" + REFERRER_USER_ID + "&token_id=" + TOKEN_ID;
+							// location.href = "/user/activityRedirect?activityId=" + ACTIVITY_ID;
+							//location.href = "/client/live/html/new/guide/redirect?liveId=" + LIVE_ID
+						}
+					});
+			}
+		</script>
+
+		<script>
+			$.get(API_ROOT + "/sys/live/brand/list", {
+				liveId:LIVE_ID
+			}, function(result) {
+				if (result.ret != "200") {
+					alert(result.msg)
+				} else {
+					var ops = "<option value=''>请选择品牌</option>";
+					for (var i = 0; i < result.data.length; i++) {
+						ops += "<option value='" + result.data[i].id + "'>" + result.data[i].brandName + "</option>"
+					}
+					$("[name=brandId]").html(ops);
+				}
+			});
+		</script>
+		<script>
+			function sendSms() {
+				$("#btnGetSms").hide();
+				$("#btnGetSmsTimer").show();
+				$.get(API_ROOT + "/user/register/newSendCode", $("#defaultForm").serialize() + "&activityId=" + ACTIVITY_ID +
+					"&liveId=" + LIVE_ID + "&type=5",
+					function(result) {
+						if (result.ret != "200") {
+							alert(result.msg);
+							$("#btnGetSms").show();
+							$("#btnGetSmsTimer").hide();
+						} else {
+							btnGetSmsTimerStart(60);
+
+						}
+					});
+			}
+
+			function btnGetSmsTimerStart(sec) {
+				if (sec <= 0) {
+					$("#btnGetSmsTimer").hide();
+					$("#btnGetSms").show();
+				} else {
+					$("#btnGetSmsTimer").html(sec + " s");
+					setTimeout(function() {
+						btnGetSmsTimerStart(--sec);
+					}, 1000);
+				}
+
+			}
+		</script>
+
+		<script>
+			function fileLoad(ele) {
+				if ($(ele).val() == "")
+					return false;
+				//④创建一个formData对象
+				var formData = new FormData();
+				//⑤获取传入元素的val
+				var name = $(ele).val();
+				//⑥获取files
+				var files = $(ele)[0].files[0];
+				//⑦将name 和 files 添加到formData中，键值对形式
+				formData.append("file", files);
+				formData.append("name", name);
+				$.ajax({
+					url: API_ROOT + "/upload/image/?loginOS=0&type=1",
+					type: 'POST',
+					data: formData,
+					processData: false, // ⑧告诉jQuery不要去处理发送的数据
+					contentType: false, // ⑨告诉jQuery不要去设置Content-Type请求头
+					beforeSend: function() {},
+					success: function(response) {
+						$("[name=headId]").val(response.data);
+						$("#cbImg").attr("src", "/image/show/?loginOs=0&fileId=" + response.data).removeClass("hide");
+					},
+					error: function(response) {
+						alert("上传图片失败");
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

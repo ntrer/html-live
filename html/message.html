@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		#container {
+			font-size: 32px;
+		}
+
+		.list {
+			margin: 5px;
+		}
+
+		.list-content {
+			padding: 2px 5px;
+			background-color: #eee
+		}
+
+		.customer {
+			margin-right: 10px
+		}
+
+		.red {
+			color: red;
+		}
+
+		.green {
+			color: green;
+		}
+
+		.blue {
+			color: blue;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		<ul id="box">
+
+		</ul>
+		<div>
+			<input id="myText" type="input" placeholder="请输入">
+			<button id="myBtn" type="button">发送</button>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>
+<script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script type="text/javascript">
+	var arr = [{
+			name: '南山南1',
+			value: '第一个数据sdfs'
+		},
+		{
+			name: '北山北2',
+			value: '第2个数据水电费第三方的'
+		},
+		{
+			name: '武欣茗3',
+			value: '第3个数据'
+		},
+		{
+			name: '武欣茗4',
+			value: '第4个数据sdfs'
+		},
+		{
+			name: '武欣茗5',
+			value: '第5个数据水电费第三方的'
+		},
+		{
+			name: '武欣茗',
+			value: '第6个数据'
+		}
+	];
+
+	var colorArr = ['red', 'blue', 'green'];
+	var drawContent = function () {
+		var str = '';
+		var j = 0;
+		for (var i = 0; i < arr.length; i++) {
+			j++;
+			if (j > 2) {
+				j = 0
+			}
+			str += `<li class="list">
+			<span class="list-content">
+				<span class='${colorArr[j]} customer'>	${arr[i]['name']} </span>	
+				<span>	${arr[i]['value']}</span>
+			</span>
+		</li>`;
+		}
+		$("#box").html(str);
+	}
+
+	drawContent();
+
+
+	$("#myBtn").on("click", function () {
+		var inputVal = $("#myText").val();
+		var obj = {
+			name: '武欣茗',
+			value: inputVal
+		}
+		if (inputVal) {
+			arr.push(obj);
+		}
+		$("#myText").val('');
+
+		drawContent();
+	})
+</script>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover" />
+	<title>Loading</title>
+	<link href="../../js/layer-v3.1.1/layer/mobile/need/layer.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./../css/reset.css?edition=201911231625">
+	<link rel="stylesheet" href="../css/live.css?edition=201911231625">
+	<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js" charset="utf-8"></script>
+	<script src="./../js/vue.min.js?edition=201911231625"></script>
+	<script src="./../js/jquery.min.js?edition=201911231625"></script>
+	<script src="./../js/rem.js?edition=201911231625"></script>
+	<script type="text/javascript"
+		src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js?edition=201911231625"></script>
+	<script src="../../js/layer-v3.1.1/layer/mobile/layer.js"></script>
+
+	<style>
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			overflow: hidden;
+			background: url(/img/reg/beijingtu.jpg) no-repeat;
+			background-size: 100% auto;
+			overflow: auto;
+			margin: 0;
+		}
+		ul { margin: 0; padding: 0; }
+		  ul * { margin: 0; padding: 0; }
+		img { max-width: 100%; }
+		.enterLog { margin-left: 10px; margin-right: 10px; }
+		  .enterLog li { display: block; float: left; width: 12.5%; margin: 0; padding: 0; margin-bottom: 8px; }
+		    .enterLog li img { border-radius: 50%; margin: 0; padding: 0; }
+		    .enterLog li p { text-align: center; margin: 0; padding: 0; overflow: hidden; word-break: keep-all; white-space: nowrap; font-size: 10px; }
+		.orderLog { margin-left: 10px; margin-right: 10px; }
+		  .orderLog li { display: block; width: 100%; clear: both; margin-bottom: 10px; }
+		    .orderLog li > img { border-radius: 50%; margin: 0; padding: 0; height: 30px; width: auto; }
+		    .orderLog li > div.nickName { margin: 0; padding: 0; height: 30px; line-height: 30px; margin-left: 8px; font-size: 12px; overflow: hidden; white-space: nowrap; }
+		    .orderLog li > div.right { margin: 0; padding: 0; height: 30px; line-height: 15px; margin-left: 8px; font-size: 12px; overflow: hidden; white-space: nowrap; text-align: right; }
+		
+		.clear { width: 100%; clear: both; height: 0; overflow: hidden; }
+		.covers { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 9999999; background: rgba(0, 0, 0, 0.8); }
+		  .covers > div { display: table-cell; vertical-align: middle; text-align: center; width: 100%; height: 100%; color: white; }
+		    .covers > div input[type=button] { padding: 10px; background-color: #eee; border: 0; margin-top: 20px; }
+		.covers1 { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 9999999; background: rgba(0, 0, 0, 0.8); }
+		  .covers1 > div { display: table-cell; vertical-align: middle; text-align: center; width: 100%; height: 100%; color: white; }
+		    .covers1 > div input[type=button] { padding: 10px; background-color: #eee; border: 0; margin-top: 20px; }
+		.content-box { margin-left: 10px; margin-right: 10px; clear: both; border: #ccc solid 1px; box-shadow: 3px 3px 9px #ccc; padding-bottom: 15px; }
+		.mt15 { margin-top: 15px; }
+		.mt10 { margin-top: 10px; }
+		.ta-center { text-align: center; }
+		.ta-right { text-align: right; }
+		body { padding-bottom: 15px; background: url(/img/reg/beijingtu.jpg) no-repeat #c9e3f9; background-size: 100% auto; }
+		
+		.content-box-2 { border-radius: 8px; margin-left: 15px; margin-right: 15px; clear: both; border: #ccc solid 1px; padding-bottom: 15px; }
+		  .content-box-2 .header { color: #555; border-bottom: 1px solid #ccc; }
+		::-webkit-scrollbar { width: 0; height: 0; background-color: rgba(240,240,240,0) }
+		.covers * { max-width: 100%; }
+		.covers img { display: block; }
+		.covers1 * { max-width: 100%; }
+		.covers1 img { display: block; }
+		
+		.hr1 { width: 100%; margin-left: auto; margin-right: auto; margin-top: 10px; height: 11px; border-top: 1px solid #ddd; overflow: hidden; clear: both; }
+		.discuss li { display: block; width: 100%; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px; }
+		.fc-light { color: #999; }
+		.fl { float: left; }
+		.fr { float: right; }
+		::-webkit-input-placeholder { /* WebKit browsers */ color: #ccc; }
+		.mt20 { margin-top: 20px; }
+		.defaultTable { width: 100%; color: rgb(136, 186, 266); }
+		  .defaultTable > tbody > tr > td { padding: 0; height: 60px; border-bottom: 1px solid rgb(136, 186, 266); white-space: nowrap; }
+		  .defaultTable tr td input, select { border: 0; background-color: inherit; }
+		.hide { display: none; }
+		.head-img{
+			width: 90%;
+			padding: 5%;
+		}
+		.head-img img{
+			width: 100%;
+			height: 100%;
+			border-radius: 2.5%;
+		}
+		.{
+			background: linear-gradient(to right, orangered, red);
+		}
+	</style>
+</head>
+
+<body >
+	<div class="head-img">
+		<img  />
+	</div>
+	
+	<div style="color: #0A7BFD;width: 100%;display: flex;align-items: center;justify-content: center;height: 5%;font-size: 0.5rem;margin-bottom: 5%;">
+		直播预约
+	</div>
+	
+  <div style="margin-left: 20px; margin-right: 20px; background-color: white;border-radius: 30px; padding: 20px;">
+    <form id="defaultForm">
+      <table class="defaultTable" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>姓名</td>
+          <td>
+            <input type="text" name="name">
+          </td>
+        </tr>
+        <tr>
+          <td>手机号</td>
+          <td>
+            <table style="width: 100%;">
+              <tr>
+                <td><input type="text" name="phone" style="width: 90%;"></td>
+<!--                <td>
+                  <img class="fr" src="/img/btnGetSms.png" style="height: 30px;" onclick="javascript:sendSms();" id="btnGetSms" />
+                  <span id="btnGetSmsTimer" class="fr" style="display: none; padding: 8px 0;">正在发送</span>
+                </td> -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <div style="margin-left: 45px; margin-right: 45px;" class="mt20">
+        <img src="/img/reg/xiayibu.png" style="margin-left: auto; margin-right: auto;" onclick="submitReg()" />
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+<script src="./../js/common.js?edition=201911231625"></script>
+<script type="text/javascript" src="./../js/awardRotate.js?edition=201911231625"></script>
+<script src="./../js/sweet-alert.min.js?edition=201911231625"></script>
+<script type="text/javascript" src="./../js/ThreeCanvas.js?edition=201911231625"></script>
+<script type="text/javascript" src="./../js/Snow.js?edition=201911231625"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js?edition=201911231625" type="text/javascript"></script>
+<script type="text/javascript">
+	var LIVE_ID = getQueryString("liveId");
+	var TOKEN_ID = getQueryString("token_id");
+	var GUIDE_OPEN_ID = getQueryString("guideOpenId");
+	var CURRENT_CUSTOMER_OPEN_ID  = getQueryString("currentCustomerOpenId");
+	
+	
+	var interval;
+	var scrolltopBefor = document.body.scrollTop; //获取调用软键盘之前浏览器滚动的高度
+	$("input").focus(function () {
+		interval = setInterval(function () {
+			document.body.scrollTop = document.body.scrollHeight; //让浏览器滚动到最底部
+			//	  focusNumber++;
+			//	  if(focusNumber>=5){
+			//	       clearInterval(interval);//清除计时器
+			//	   }
+		}, 100)
+	}).blur(function () { //设定输入框失去焦点时的事件
+		setTimeout(function () {
+			clearInterval(interval); //清除计时器
+			document.body.scrollTop = scrolltopBefor; //恢复到调用软键盘之前浏览器的高度
+		}, 500);
+	});
+	
+	$.post(API_ROOT + "/client/live/details", {
+			liveId: LIVE_ID,
+			token_id: TOKEN_ID
+		}, function (data) {
+			if (data.ret == "200") {
+				$(".head-img>img").attr("src",API_ROOT + "/image/show/?loginOs=0&imgType=&fileId=" + data.data.liveIndex.liveLogoImageId)
+			}
+		});
+		
+	function submitReg(){
+		$.post(API_ROOT + "/client/live/customer/make/register", {
+				guideOpenId :GUIDE_OPEN_ID,
+				customerOpenId:CURRENT_CUSTOMER_OPEN_ID,
+				liveId:LIVE_ID,
+				customerName:$("[name=name]").val(),
+				mobileNumber:$("[name=phone]").val()
+			}, function (data) {
+				if(data.ret == 200){
+					layer.open({
+						title: ['提示', 'background-color:#8DCE16; color:#fff;'],
+						content: '预约成功',
+						btn: ['确认'],
+						yes: function (index) {
+							location.href = location.href;
+						}
+					});
+				} else {
+					layer.open({
+						title: ['提示', 'background-color:#8DCE16; color:#fff;'],
+						content: data.msg,
+						btn: ['确认'],
+						yes: function (index) {
+							$(".layui-m-layer").hide();
+						}
+					});
+				}
+			});
+	}
+</script>
