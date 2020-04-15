@@ -133,7 +133,6 @@
 			display: flex;
 			justify-content: space-between;
 			padding: 0.2rem;
-			border-bottom: 1px #eee solid;
 		}
 
 		.covers-content-left {
@@ -185,18 +184,10 @@
 
 		.covers-bottom {
 			border-top: 1px solid gainsboro;
-			    padding: 0.2rem 0.2rem 0rem 0.2rem;
-			    font-size: 14px;
-			    height: 3rem;
+			padding: 0.2rem 0.2rem 2rem 0.2rem;
+			font-size: 14px;
 		}
-		
-		.dianmian-info {
-			border-top: 1px solid gainsboro;
-			    padding: 0.2rem 0.2rem 0rem 0.2rem;
-			    font-size: 14px;
-			    height: 3rem;
-		}
-		
+
 		.covers-close {
 			width: 0.4rem;
 			height: 0.4rem;
@@ -713,49 +704,6 @@
 			width: 100%;
 			display: block;
 		}
-		
-		.tablist{
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-direction: row;
-			width: 100%;
-			height: 0.4rem;
-			z-index: 9999;
-			padding: 0.05rem 0rem;
-		}
-		
-		.tab{
-			background:#fff;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex: 1;
-			color:#666;
-			height: 100%;
-			font-size: 14px;
-		}
-		
-		.tabin{
-			background:#fff;
-			color:orange;
-			font-size: 16px;
-		}
-		
-		.tab-content{
-			display: none;
-
-		}
-		
-		.tab-contentin{
-			display: block;
-
-		}
-		
-	    .dianmian-address{
-			margin-bottom: 0.1rem;
-		}
-		
 	</style>
 </head>
 
@@ -1043,18 +991,7 @@
 					</div>
 				</li> -->
 			</ul>
-			
-			<div class="tablist">
-				<div class="tabin tab">商品信息</div>
-				<div class="tab">店面信息</div>
-			</div>
-			
-			<div class="covers-bottom tab-contentin" id="coversBottom">
-			</div>
-			
-			<div class="dianmian-info tab-content" id="dianmian-info">
-				<div class="dianmian-address"></div>
-				<div class="dianmian-phone"></div>
+			<div class="covers-bottom" id="coversBottom">
 			</div>
 		</div>
 	</div>
@@ -1213,29 +1150,6 @@
 <script type="text/javascript" src="./../js/ThreeCanvas.js?edition=201911231625"></script>
 <script type="text/javascript" src="./../js/Snow.js?edition=201911231625"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js?edition=201911231625" type="text/javascript"></script>
-
-<script>
-	$(document).ready(function() {
-		$(".tablist div").each(function(index) {
-			$(this).click(function() {
-				$(".tabin").removeClass("tabin");
-				$(this).addClass("tabin")
-				if(index==0){
-					$(".covers-bottom").addClass("tab-contentin");
-					$(".dianmian-info").removeClass("tab-contentin");
-					$(".dianmian-info").addClass("tab-content");
-				}
-				else{
-					$(".covers-bottom").removeClass("tab-contentin");
-					$(".covers-bottom").addClass("tab-content");
-					$(".dianmian-info").addClass("tab-contentin");
-				}
-				
-			});
-		})
-	})
-
-</script>
 
 <script type="text/javascript">
 	//火箭效果
@@ -1812,8 +1726,6 @@
 				$("#contentRobbed").html(data.data.liveGoodsLink.liveGoodsIndex.sellCount);
 				$("#contentPayer").html(data.data.liveGoodsLink.liveGoodsIndex.reservePrice);
 				$("#coversBottom").html(data.data.liveGoodsLink.liveGoodsIndex.desc);
-				$(".dianmian-address").html("店铺地址："+data.data.liveGoodsLink.liveGoodsIndex.address);
-				$(".dianmian-phone").html("联系电话："+data.data.liveGoodsLink.liveGoodsIndex.phone);
 				
 				$(".content-right-payment").bind("click",function(){
 					$(".mask-covers").hide();

@@ -191,7 +191,8 @@
 		.covers-close {
 			width: 0.4rem;
 			height: 0.4rem;
-			margin-left: 0.7rem;
+			/* margin-left: 0.7rem; */
+			margin-top: -0.1rem;
 		}
 
 		.covers-close img {
@@ -1575,16 +1576,16 @@
 				}
 
 				$(".goods-details-box").html(goodsDesc)
-				if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
-					$(".order-img").hide()
-					$(".goods-price-box").hide()
-					$(".goods-stock-box").hide()
-					$(".goods-order-box").hide()
-					$(".dianmianjia").hide()
-					$(".yiqiang").hide()
-					$(".content-right-font").hide()
-					$(".content-right-payment").hide()
-				}
+				// if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
+				// 	$(".order-img").hide()
+				// 	$(".goods-price-box").hide()
+				// 	$(".goods-stock-box").hide()
+				// 	$(".goods-order-box").hide()
+				// 	$(".dianmianjia").hide()
+				// 	$(".yiqiang").hide()
+				// 	$(".content-right-font").hide()
+				// 	$(".content-right-payment").hide()
+				// }
 			} else {
 				// alert(data.msg)
 			}
@@ -1821,16 +1822,16 @@
 					// }
 
 					$(".goods-details-box").html(goodsDesc);
-					if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
-						$(".order-img").hide()
-						$(".goods-price-box").hide()
-						$(".goods-stock-box").hide()
-						$(".goods-order-box").hide()
-						$(".dianmianjia").hide()
-						$(".yiqiang").hide()
-						$(".content-right-font").hide()
-						$(".content-right-payment").hide()
-					}
+					// if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
+					// 	$(".order-img").hide()
+					// 	$(".goods-price-box").hide()
+					// 	$(".goods-stock-box").hide()
+					// 	$(".goods-order-box").hide()
+					// 	$(".dianmianjia").hide()
+					// 	$(".yiqiang").hide()
+					// 	$(".content-right-font").hide()
+					// 	$(".content-right-payment").hide()
+					// }
 					// $(".contlist").html(goodsDetail)
 
 					// if (data.data.liveGoodsLink.liveGoodsIndex.limitation == null) {
@@ -2028,7 +2029,7 @@
 						}
 
 
-						html += '<p>' + data.data.liveGoodsLinkList[i].liveGoodsIndex.title + '</p>' +
+						html += '<p>' + data.data.liveGoodsLinkList[i].liveGoodsIndex.businessMerchantName+ '</p>' +
 							'</div>	' +
 							'<div class="goods-list-item-img"  >' +
 							'<img src="'+ data.data
@@ -2123,16 +2124,16 @@
 					// }
 
 					$(".goods-details-box").html(goodsDesc)
-					if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
-						$(".order-img").hide()
-						$(".goods-price-box").hide()
-						$(".goods-stock-box").hide()
-						$(".goods-order-box").hide()
-						$(".dianmianjia").hide()
-						$(".yiqiang").hide()
-						$(".content-right-font").hide()
-						$(".content-right-payment").hide()
-					}
+					// if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
+					// 	$(".order-img").hide()
+					// 	$(".goods-price-box").hide()
+					// 	$(".goods-stock-box").hide()
+					// 	$(".goods-order-box").hide()
+					// 	$(".dianmianjia").hide()
+					// 	$(".yiqiang").hide()
+					// 	$(".content-right-font").hide()
+					// 	$(".content-right-payment").hide()
+					// }
 					// GOODS_DEFAULT_ID++;
 
 				} else {
@@ -2195,16 +2196,16 @@
 					// 	maxNum = data.data.liveGoodsLinkList[GOODS_DEFAULT_INDEX].liveGoodsIndex.limitation
 					// }
 					$(".goods-details-box").html(goodsDesc)
-					if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
-						$(".order-img").hide()
-						$(".goods-price-box").hide()
-						$(".goods-stock-box").hide()
-						$(".goods-order-box").hide()
-						$(".dianmianjia").hide()
-						$(".yiqiang").hide()
-						$(".content-right-font").hide()
-						$(".content-right-payment").hide()
-					}
+					// if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
+					// 	$(".order-img").hide()
+					// 	$(".goods-price-box").hide()
+					// 	$(".goods-stock-box").hide()
+					// 	$(".goods-order-box").hide()
+					// 	$(".dianmianjia").hide()
+					// 	$(".yiqiang").hide()
+					// 	$(".content-right-font").hide()
+					// 	$(".content-right-payment").hide()
+					// }
 					// GOODS_DEFAULT_ID++;
 				}
 				$("#" + selectGoodsId).css("background", "#1888FF");
@@ -3194,16 +3195,16 @@
 						selectGoodsId = data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId;
 						$("#" + selectGoodsId).css("background", "#1888FF");
 						$(".goods-details-box").html(goodsDesc);
-						if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
-							$(".order-img").hide()
-							$(".goods-price-box").hide()
-							$(".goods-stock-box").hide()
-							$(".goods-order-box").hide()
-							$(".dianmianjia").hide()
-							$(".yiqiang").hide()
-							$(".content-right-font").hide()
-							$(".content-right-payment").hide()
-						}
+						// if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
+						// 	$(".order-img").hide()
+						// 	$(".goods-price-box").hide()
+						// 	$(".goods-stock-box").hide()
+						// 	$(".goods-order-box").hide()
+						// 	$(".dianmianjia").hide()
+						// 	$(".yiqiang").hide()
+						// 	$(".content-right-font").hide()
+						// 	$(".content-right-payment").hide()
+						// }
 						tempRollWidth -= tempCount;
 						// $(".goods-list-box").scrollLeft(tempRollWidth);
 						rollWidth = 0;
