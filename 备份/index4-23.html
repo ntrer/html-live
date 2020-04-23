@@ -2098,7 +2098,6 @@
 								zzkj = i;
 							}
 						} else if (data.data.liveGoodsLinkList[i].liveStatus == 20) {
-							GOODS_DEFAULT_ID=data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId
 							//正在砍价修改背景色  并拉宽
 							html += '<div class="goods-list-item ' + data.data.liveGoodsLinkList[i].liveGoodsId +
 								'" style="width:1.5rem" onclick="goodsDetail(\'' + data
@@ -2296,7 +2295,7 @@
 					// }
 					// GOODS_DEFAULT_ID++;
 				}
-				// $("#" + selectGoodsId).css("background", "#1888FF");
+				$("#" + selectGoodsId).css("background", "#1888FF");
 				var count = 0;
 				var tempRollWidth = 0;
 				var tempCount = 0;

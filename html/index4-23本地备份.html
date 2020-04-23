@@ -893,18 +893,19 @@
 			<img src="../images/6.png" />
 		</div>
 		<div id="shareNum" class="share-count-box">
+
 		</div>
 	</div>
 
 	<!-- 订单悬浮框 -->
-	<!-- <div class="order-box">
+	<div class="order-box">
 		<div class="order-icon-box">
 			<img src="../images/5.png" />
 		</div>
 		<div id="orderNum" class="order-count-box">
 
 		</div>
-	</div> -->
+	</div>
 
 
 	<!-- 火箭悬浮按钮 -->
@@ -2061,6 +2062,7 @@
 							GOODS_DEFAULT_INDEX = i;
 						}
 						if (data.data.liveGoodsLinkList[i].liveStatus == 10) {
+							GOODS_DEFAULT_ID=data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId
 							//正在砍价修改背景色  并拉宽
 							html += '<div class="goods-list-item ' + data.data.liveGoodsLinkList[i].liveGoodsId +
 								'" style="width:1.5rem" onclick="goodsDetail(\'' + data
@@ -2098,7 +2100,6 @@
 								zzkj = i;
 							}
 						} else if (data.data.liveGoodsLinkList[i].liveStatus == 20) {
-							GOODS_DEFAULT_ID=data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId
 							//正在砍价修改背景色  并拉宽
 							html += '<div class="goods-list-item ' + data.data.liveGoodsLinkList[i].liveGoodsId +
 								'" style="width:1.5rem" onclick="goodsDetail(\'' + data
