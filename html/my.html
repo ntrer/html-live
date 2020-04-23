@@ -387,18 +387,20 @@
             var type = ""
             type = $(".medal-bottom-wrap li").eq(i).children("div").eq(1).children("input").is(':checked');
             medal = $(".medal-bottom-wrap li").eq(i).attr("id");
-            console.log(medal);
-            console.log(type);
-            if (type == true) {
-                assembleMedalIds += medal + ","
-            }
+            assembleMedalIds += medal + ","
+			
+			// console.log(medal);
+   //          console.log(type);
+   //          if (type == true) {
+   //              assembleMedalIds += medal + ","
+   //          }
         }
         assembleMedalIds = assembleMedalIds.slice(0, assembleMedalIds.length - 1);
-        if (assembleMedalIds == null || assembleMedalIds == "" || assembleMedalIds ==
-            undefined) {
-				alert("请选择勋章");
-            return;
-        }
+    //     if (assembleMedalIds == null || assembleMedalIds == "" || assembleMedalIds ==
+    //         undefined) {
+				// alert("请选择勋章");
+    //         return;
+    //     }
 
         $.post(API_ROOT + "/client/synthetize/assemble/medal", {
             liveId: live_val_Id,
