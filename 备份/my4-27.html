@@ -113,7 +113,7 @@
                     <img :src="" alt="" id="images">
                 </li>
 				
-				<div class="zhongjiang" onclick="zhongjiangmingdan()">
+				<div class="zhongjiang" onclick="zhongjiangmingdan()" style="cursor:pointer;">
 				    中奖名单
 				</div>
 				
@@ -259,20 +259,7 @@
                     $("#sex").attr('src', './../images/female.png');
                 }
                 var html = "";
-				var status="";
                 for (var i = 0; i < data.data.liveGoodsOrderList.length; i++) {
-					if(data.data.liveGoodsOrderList[i].payStatus==100){
-						status="已支付"
-					}
-					else if(data.data.liveGoodsOrderList[i].payStatus==-110){
-						status="库存不足，稍后金额原路退回"
-					}
-					else if(data.data.liveGoodsOrderList[i].payStatus==-115){
-						status="退款中"
-					}
-					else if(data.data.liveGoodsOrderList[i].payStatus==-120){
-						status="已退款"
-					}
                     html += '<li>' +
                         '<div class="order-img">' +
                         '<img src="' + API_ROOT + "/image/show/?token_id=" + token_val_id +
@@ -282,11 +269,10 @@
                         '<div class="order-shop">' +
                         '<b>' + data.data.liveGoodsOrderList[i].liveGoods
                         .title + '</b>' +
-                        '<span>订单编号:' + data.data.liveGoodsOrderList[i].liveGoodsOrderIdStr +
+                        '<span>订单编号 ' + data.data.liveGoodsOrderList[i].liveGoodsOrderIdStr +
                         '</span>' +
-                        '<p>下单时间:' + data.data.liveGoodsOrderList[i].createTime + '</p>' +
+                        '<p>下单时间 ' + data.data.liveGoodsOrderList[i].createTime + '</p>' +
 						'<p>数量 ' + data.data.liveGoodsOrderList[i].goodsNum + '</p>' +
-						'<p>订单状态:' + status+ '</p>'
                         '</div>' +
                         '</li>'
                     $("#orderList").html(html);
@@ -316,8 +302,8 @@
 	       if (data.ret == "200") {
 	           for (var i = 0; i < data.data.list.length; i++) {
 	              html+= '<div class="mingdan-content">'+'<div class="zhongjiang-name">'+data.data.list[i].grade+'--'+'</div>'+
-	           		       '<div class="zhongjiang-phone">'+data.data.list[i].userName+'--'+'</div>'  +
-						   '<div class="zhongjiang-phone">'+data.data.list[i].mobileNumber+'</div>'  
+	           		       '<div class="zhongjiang-phone">'+xmjiami(data.data.list[i].userName)+'--'+'</div>'  +
+						   '<div class="zhongjiang-phone">'+jiami(data.data.list[i].mobileNumber)+'</div>'  
 						   +'</div>' 
 	           } 
 			    $(".my-wrap").mLoading("hide");
@@ -331,6 +317,21 @@
 	   
 
    }
+
+   
+	function jiami(tel){
+		if(tel.length == 11) {
+			tel = tel.substr(0, 3) + '****' + tel.substring(7, 11);
+		}
+		return tel;
+	}
+	 
+	function xmjiami(telnm){
+		if(telnm.length > 1) {
+			 telnm = telnm.substr(0, 1) + '**';
+		}
+		return telnm;
+	}
 </script>
 <script>
     function returnPageIndex() {
@@ -359,6 +360,7 @@
                         '<img src="./../images/medal1.png" alt="">' +
                         '</div>' +
                         '<div class="medal-bot-inp">' +
+                        '<input type="checkbox">' +
                         '</div>' +
                         '</li>';
                     html += '<div>' +
@@ -400,19 +402,18 @@
             var type = ""
             type = $(".medal-bottom-wrap li").eq(i).children("div").eq(1).children("input").is(':checked');
             medal = $(".medal-bottom-wrap li").eq(i).attr("id");
-			 assembleMedalIds += medal + ","
-            // console.log(medal);
-            // console.log(type);
-            // if (type == true) {
-            //     assembleMedalIds += medal + ","
-            // }
+            console.log(medal);
+            console.log(type);
+            if (type == true) {
+                assembleMedalIds += medal + ","
+            }
         }
         assembleMedalIds = assembleMedalIds.slice(0, assembleMedalIds.length - 1);
-    //     if (assembleMedalIds == null || assembleMedalIds == "" || assembleMedalIds ==
-    //         undefined) {
-				// alert("请选择勋章");
-    //         return;
-    //     }
+        if (assembleMedalIds == null || assembleMedalIds == "" || assembleMedalIds ==
+            undefined) {
+				alert("请选择勋章");
+            return;
+        }
 
         $.post(API_ROOT + "/client/synthetize/assemble/medal", {
             liveId: live_val_Id,

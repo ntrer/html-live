@@ -1688,9 +1688,7 @@
 			liveShareCustomerOpenId: liveShareCustomerOpenId,
 			mobileNumber: $(".formMobile [name=phone]").val(),
 			userName: $(".formMobile [name=name]").val(),
-			goodsNum: goodsNum,
-			latitude:latitude,
-			longitude:longitude
+			goodsNum: goodsNum
 		}, function (result) {
 			if (result.ret != "200") {
 				if (result.msg == "数据异常") {
