@@ -828,14 +828,19 @@
 		.xuhao{
 			background-color: red;
 			    position: absolute;
-			    left: -6px;
-			    top: -6px;
+			    left: -0.1rem;
+			    top: -0.1rem;
 			    width: 0.25rem;
 			    height: 0.25rem;
 			    text-align: center;
 			    display: flex;
 			    align-items: center;
 			    border-radius: 50px;
+		}
+		
+		.xuhao p{
+			margin-left: 0;
+			margin-bottom: 0.05rem;
 		}
 		
 		.goods-list-box{
@@ -2221,11 +2226,14 @@
 			})
 			// }
 
-		}, 30000);
+		}, 10000);
 
 	})
 </script>
 <script>
+	
+	
+	
 	document.addEventListener('touchstart', function () {
 		// $(".play-buttom-box").hide();
 		// document.getElementsByTagName('video')[0].play();
@@ -3464,10 +3472,6 @@
 	
 
 	
-	
-	//进来先调一次
-	liveingBrand();
-	
 	//正在砍价的品牌信息
 	function liveingBrand() {
 		$.post(API_ROOT + "/client/live/bargaining/brand", {
@@ -3563,6 +3567,9 @@
 		}, 30000);
 	})
 	
+	//进来先调一次
+	liveingBrand();
+	
 	
 	/**
 	 * 点量勋章调用接口
@@ -3589,7 +3596,7 @@
 				
 	
 			} else {
-				alert(data.msg)
+				// alert(data.msg)
 			}
 		})
 	}
@@ -3635,6 +3642,11 @@
 			})
 		}, 180000);
 	}
+	
+	
+	inviteHeartbeat();
+	
+	
 </script>
 
 <script>
@@ -3678,7 +3690,15 @@
 </script>
 <script>
 	var rollWidth = 0;
-    goodslistSjs();
+    var isFirst=0;
+	
+	if(isFirst==0){
+		goodslistSjs();
+		isFirst=1;
+	}
+	
+	
+	
 	function goodslistSjs() {
 		$.post(API_ROOT + "/client/live/goodslist", {
 			liveId: live_val_Id,
@@ -3688,11 +3708,13 @@
 			if (data.ret == "200") {
 				for (var i = 0; i < data.data.liveGoodsLinkList.length; i++) {
 					if (data.data.liveGoodsLinkList[i].liveStatus == 10) {
+						console.log("当前是第"+i+"个");
 						if (data.data.liveGoodsLinkList[i].liveStatus != "20" && data.data.liveGoodsLinkList[i]
 							.liveStatus != "30") {
 							//未完成砍价时  商品金额为问号
 							data.data.liveGoodsLinkList[i].liveGoodsIndex.livePrice = "???";
 						}
+						
 						GOODS_DEFAULT_ID=data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId
 						var goodsDesc = ""
 						goodsDesc +=
@@ -3790,9 +3812,14 @@
 			}
 		})
 	}
+	
+	
 	var goodslistSjsTime = setInterval(function () {
 		goodslistSjs();
 	}, 30000);
+	
+	
+	
 </script>
 <script>
 	$(function () {

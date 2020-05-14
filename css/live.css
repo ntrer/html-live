@@ -321,6 +321,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 0.25rem;
 }
 
 .goods-stock-box {
@@ -431,7 +432,7 @@ textarea {
 /* 点赞悬浮样式 */
 .like-box {
 	position: fixed;
-	top: 73%;
+	top: 70%;
 	left: 87%;
 	height: 1rem;
 	width: 0.5rem;
@@ -461,7 +462,7 @@ textarea {
 /* 分享悬浮样式 */
 .share-box {
 	position: fixed;
-	top: 83%;
+	top: 80%;
 	left: 87%;
 	height: 1rem;
 	width: 0.5rem;
