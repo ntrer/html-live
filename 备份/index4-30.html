@@ -459,19 +459,6 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 		}
-		
-		.information-wrap2 {
-			z-index: 99999;
-			width: 75%;
-			background-color: white;
-			padding-top: 0.3rem;
-			font-size: 20px;
-			border-radius: 10px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
 
 		.in-title {
 			color: #000;
@@ -769,203 +756,23 @@
 			margin-bottom: 0.1rem;
 		}
 		
-		.giveup{
-			display: none;
-		}
-		
-		.giveupImg{
-			width: 100%;
-			height: 3rem;
-			display: flex;
-			align-items: center;
-			justify-content: center
-		}
-		
-		
-		
-		.fangqi-img{
-			width: 70%;
-			height: 95%;
-		}
-		
-		.giveupbtn{
-			display: flex;
-			    height: 1.5rem;
-			    align-items: center;
-			    justify-content: center;
-		}
-		
-		.fangqi{
-			height: 0.5rem;
-			    background-color: #dddddd;
-				color: white;
-			    vertical-align: c;
-			    display: flex;
-			    justify-content: center;
-			    align-items: center;
-			    padding: 0.1rem;
-			    border-radius: 10px;
-			    font-size: 0.3rem;
-			    flex: 1;
-			    margin: 0 0.2rem ;
-		}
-		
-		.jixu{
-			height: 0.5rem;
-			    background-color: #da2e20;
-				color: white;
-			    vertical-align: c;
-			    display: flex;
-			    justify-content: center;
-			    align-items: center;
-			    padding: 0.1rem;
-			    border-radius: 10px;
-			    font-size: 0.3rem;
-			    flex: 1;
-			    margin: 0 0.2rem ;
-		}
-		
-		.xuhao{
-			background-color: red;
-			    position: absolute;
-			    left: -6px;
-			    top: -6px;
-			    width: 0.25rem;
-			    height: 0.25rem;
-			    text-align: center;
-			    display: flex;
-			    align-items: center;
-			    border-radius: 50px;
-		}
-		
-		.goods-list-box{
-			margin: 2.0% 5%;
-			padding: 1.5% 1.5%;
-		}
-		
-		.top-tips-left{
-			margin-left: 0.1rem;
-			    margin-right: auto;
-			    display: flex;
-			    flex-direction: row;
-			    margin-top: 0.1rem;
-			    width: 2rem;
-			    height: 0.5rem;
-			    background: rgba(255,255,255,0.5);
-			    border-radius: 0.5rem;
-				align-items: center;
-		}
-		
-		.top-tips-right{
-			    margin-left: 0.1rem;
-			    display: flex;
-			    flex-direction: row;
-			    margin-top: 0.1rem;
-				min-width: 2rem;
-				max-width: 2.3rem;
-			    height: 0.5rem;
-			    background: rgba(255,255,255,0.5);
-			    border-radius: 0.5rem;
-				align-items: center;
-		}
-		
-		.kanjiashi-touxiang{
-			width: 0.5rem;
-			height: 0.5rem;
-		}
-		
-		.daogou-touxiang{
-			width: 0.5rem;
-			height: 0.5rem;
-		}
-		
-		.kanjiashi-name{
-			margin-left: 0.2rem;
-			    font-size: 0.2rem;
-				overflow: hidden;
-				text-overflow:ellipsis;
-				white-space: nowrap;
-		}
-		.zaixianrenshu{
-			margin-left: 0.2rem;
-			    font-size: 0.1rem;
-			    margin-top: 0.06rem;
-		}
-		
-		.daogou-name{
-			margin-left: 0.2rem;
-			    font-size: 0.2rem;
-				overflow: hidden;
-				text-overflow:ellipsis;
-				white-space: nowrap;
-		}
-		.daogou_shenfen{
-			margin-left: 0.2rem;
-			    font-size: 0.1rem;
-			    margin-top: 0.06rem;
-				overflow: hidden;
-				text-overflow:ellipsis;
-				white-space: nowrap;
-		}
-		
-		.kanjiashi_info{
-			 width: 1.5rem;
-		}
-		
-		.medal-box{
-			    height: 1.3rem;
-			        width: 1.3rem;
-			    display: flex;
-			    flex-direction: column;
-			    align-items: center;
-			    /* justify-content: center; */
-			    position: fixed;
-			    top: 18%;
-			    right: 1%;
-			    left: auto;
-			    z-index: 999;
-				background-size: 100% 100%;
-			    color: white;
-			    border-radius: 0.2rem;
-		}
-		
-		.living-brand-img{
-			    width: 0.8rem;
-			        height: 0.5rem;
-			        position: absolute;
-			        top: 0.4rem;
-			        left: 0.25rem;
-		}
-		
-		.living-goods-num{
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		
 	</style>
 </head>
 
 <body>
 	<div class="top-tips-box">
 		<div class="top-tips-left">
-			<img src="" alt="" class="kanjiashi-touxiang">
-			<div class="kanjiashi_info">
-				<div class="kanjiashi-name"></div>
-				<div class="zaixianrenshu"></div>
+			<div class="green-tips">
+
+			</div>
+			<div id="watchNum">
+				人正在观看
 			</div>
 		</div>
-		<div class="top-tips-right">
-			<img src="" alt="" class="daogou-touxiang">
-			<div class="kanjiashi_info">
-				<div class="daogou-name"></div>
-				<div class="daogou_shenfen"></div>
-			</div>
-			
+		<div id="inteNum" class="top-tips-right">
+			人正在互动
 		</div>
 	</div>
-	
-	
 
 	<!-- 播放器容器 -->
 	<div id="live-box">
@@ -1284,7 +1091,7 @@
 			<div class="information-wrap">
 				<!--        <div style="color: #666;">请填写手机号码</div> -->
 				<div class="close-button"
-					onclick="closexiadan()">
+					onclick="javascript:document.getElementById('divMobile').style.display='none';">
 					<img src="./../images/1.jpg" />
 				</div>
 				<div class="in-title">用户信息</div>
@@ -1312,27 +1119,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	<!-- 放弃下单框 -->
-	<div class="giveup">
-		<div class="information-wrap2">
-			<div class="giveupImg">
-				<img class="fangqi-img" src="../images/giveup2.png" >
-			</div>
-			<div class="giveupbtn">
-				<div class="fangqi" onclick="fangqi()">
-					放弃优惠
-				</div>
-				
-				<div class="jixu" onclick="conshowDivMobile()">
-					继续下单
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
 
 	<!-- 分享图片遮罩层 -->
 	<div class="lbOverlay" id="lbOverlayShare-box" onclick="closeDiv()" style="opacity:0.9">
@@ -1372,7 +1158,7 @@
 	</div>
 
 	<!-- 勋章 -->
-	<!-- <div class="medal-box" style="display: none;">
+	<div class="medal-box" style="display: none;">
 		<div class="medal-img-box">
 			<img src="./../images/medal2.png" />
 		</div>
@@ -1385,22 +1171,7 @@
 		<div class="medal-button" onclick="receiveMedal()">
 			点亮直播章
 		</div>
-	</div> -->
-
-
-      <!-- 新勋章 -->
-     <div class="medal-box">
-		 
-		 <div class="living-goods-num"></div>
-		
-         <<img src="" alt="" class="living-brand-img">
-			 
-		<!-- <div class="medal-button" onclick="receiveMedal()">
-			点亮直播章
-		</div> -->
 	</div>
-
-
 
 
 	<div class="page-screen">
@@ -1714,10 +1485,9 @@
 	var SMS_TEXT_START = false;
 	var SMS_START_ID = 0;
 	var MEDAL_GOODS = ""
-    var fangqi_count=0;
+
 	function showDivMobile(goodsId) {
 		_goodsId = goodsId;
-		console.log(goodsId);
 		//获取直播商品详情
 		$.post(API_ROOT + "/client/live/goodsDetails", {
 			liveId: live_val_Id,
@@ -1738,63 +1508,7 @@
 		})
 		
 		$("#divMobile").css("display", "block");
-		
 	}
-	
-	
-	function closexiadan(){
-		$("#divMobile").css("display", "none");
-		$(".giveup").css("display", "block");
-	}
-	
-	
-	function fangqi(){
-		++fangqi_count;
-		if(fangqi_count<=1){
-			$(".fangqi-img").css('width','80%')
-			$(".fangqi-img").attr('src','../images/giveup1.png')
-		}
-		else{
-			fangqi_count=0;
-			$(".giveup").css("display", "none");
-			$(".fangqi-img").css('width','70%')
-			$(".fangqi-img").attr('src','../images/giveup2.png')
-		}
-	}
-	
-	//继续下单
-	function conshowDivMobile(){
-		fangqi_count=0
-		$(".fangqi-img").css('width','70%')
-		$(".fangqi-img").attr('src','../images/giveup2.png')
-		_goodsId = _goodsId;
-		//获取直播商品详情
-		$.post(API_ROOT + "/client/live/goodsDetails", {
-			liveId: live_val_Id,
-			token_id: token_val_id,
-			liveGoodsId: _goodsId
-		}, function (data) {
-			if (data.ret == "200") {
-				if (data.data.liveGoodsLink.liveGoodsIndex.limitation == null) {
-				    $(".goods-num-text").text("该商品每户限购10件");
-				    maxNum = 10
-				} else {
-				    $(".goods-num-text").text("该商品每户限购" + data.data.liveGoodsLink.liveGoodsIndex.limitation +
-				       "件");
-				    maxNum = data.data.liveGoodsLink.liveGoodsIndex.limitation
-				}
-			}
-		
-		})
-		
-		$("#divMobile").css("display", "block");
-		
-		// $(".giveup").css("display", "block");
-	}
-	
-	
-	
-	
 
 	function hideDivMobile() {
 		$("#divMobile").css("display", "none");
@@ -1882,7 +1596,7 @@
 						if (goodsList[i].liveStatus == 0 || goodsList[i].liveStatus == 30) {
 							$("#" + goodsList[i].liveGoodsIndex.liveGoodsId).css("background", "#7A7A7A");
 						} else {
-							$("#" + goodsList[i].liveGoodsIndex.liveGoodsId).css("background", "#7A7A7A");
+							$("#" + goodsList[i].liveGoodsIndex.liveGoodsId).css("background", "#CFA972");
 						}
 					}
 				}
@@ -1893,8 +1607,7 @@
 				// }
 
 				selectGoodsId = data.data.liveGoodsLink.liveGoodsId
-				// $("#" + selectGoodsId).css("background", "#1888FF");
-				$("#" + selectGoodsId).css("background", "#7A7A7A");
+				$("#" + selectGoodsId).css("background", "#1888FF");
 
 				var goodsDesc = "";
 
@@ -2143,10 +1856,10 @@
 					}
 					$("#" + selectGoodsId).css("background", "#7A7A7A");
 					if (selectGoodsId == selectBeingId) {
-						$("#" + selectGoodsId).css("background", "#7A7A7A");
+						$("#" + selectGoodsId).css("background", "#CFA972");
 					}
 					selectGoodsId = data.data.liveGoodsLink.liveGoodsId
-					$("#" + selectGoodsId).css("background", "#7A7A7A");
+					$("#" + selectGoodsId).css("background", "#1888FF");
 
 					var goodsDesc = "";
 					goodsDesc +=
@@ -2231,7 +1944,7 @@
 		// document.getElementsByTagName('video')[0].play();
 		// document.getElementsByTagName('video')[0].pause();
 	});
-     var LivingGoodsNum=[];
+
 	//直播详情
 	$(function () {
 		$.post(API_ROOT + "/client/live/details", {
@@ -2323,31 +2036,25 @@
 			liveId: live_val_Id,
 			token_id: token_val_id
 		}, function (data) {
-			console.log("goodslist");
+			// console.log(data);
 			if (data.ret == "200") {
 				var html = "";
 				var zzkj = -1;
 				var dqxz = -1;
 				var isMedalForId = 0;
 				goodsList = data.data.liveGoodsLinkList
-				// for (var i = 0; i < data.data.liveGoodsLinkList.length; i++) {
-				// 	if (data.data.liveGoodsLinkList[i].liveStatus == 10) {
-						
-				// 	} 
-				// }
-				// for (var i = 0; i < data.data.liveGoodsLinkList.length; i++) {
-				// 	if (data.data.liveGoodsLinkList[i].liveStatus != 10) {
-				// 		isMedalForId = 0;
-				// 	} else {
-				// 		isMedalForId = 1;
-				// 		break;
-				// 	}
-				// }
-				// if (isMedalForId == 0) {
-				// 	isMedalTimeGoodsId = "";
-				// }
 				for (var i = 0; i < data.data.liveGoodsLinkList.length; i++) {
-					LivingGoodsNum.push(data.data.liveGoodsLinkList[i].liveGoodsId);
+					if (data.data.liveGoodsLinkList[i].liveStatus != 10) {
+						isMedalForId = 0;
+					} else {
+						isMedalForId = 1;
+						break;
+					}
+				}
+				if (isMedalForId == 0) {
+					isMedalTimeGoodsId = "";
+				}
+				for (var i = 0; i < data.data.liveGoodsLinkList.length; i++) {
 					if (forIndex == 0) {
 						if (data.data.liveGoodsLinkList[i].liveStatus != 0&&data.data.liveGoodsLinkList[i].liveStatus==10) {
 							GOODS_DEFAULT_INDEX = i;
@@ -2355,47 +2062,31 @@
 						if (data.data.liveGoodsLinkList[i].liveStatus == 10) {
 							//正在砍价修改背景色  并拉宽
 							html += '<div class="goods-list-item ' + data.data.liveGoodsLinkList[i].liveGoodsId +
-								'" style="width:1rem" onclick="goodsDetail(\'' + data
+								'" style="width:1.5rem" onclick="goodsDetail(\'' + data
 								.data.liveGoodsLinkList[
 									i].liveGoodsId + '\')">';
-							html += '<div style="background-color:#7A7A7A" dom=' + data.data.liveGoodsLinkList[i]
+							html += '<div style="background-color:#CFA972" dom=' + data.data.liveGoodsLinkList[i]
 								.liveStatus + '  class="goods-list-item-title" id="' + data
 								.data.liveGoodsLinkList[i].liveGoodsId + '">';
 							if (data.data.liveGoodsLinkList[i].isOpenAssembleMedal == 1) {
 								// $(".medal-img-box img").attr("src", API_ROOT +
 								// 	"/image/show/?loginOs=0&imgType=&fileId=" + data.data.liveGoodsLinkList[i]
 								// 	.liveGoodsIndex.titleImageId)
-								// $(".medal-text-box").text(data.data.liveGoodsLinkList[i].liveGoodsIndex
-								// 	.businessMerchantName)
-								// $(".medal-button").remove("οnclick");
-								// $(".medal-button").attr("onclick", "receiveMedal(\"" + data.data.liveGoodsLinkList[
-								// 		i]
-								// 	.liveGoodsIndex.liveGoodsId + "\")")
-								// var delayed = data.data.liveGoodsLinkList[i].assembleMedalHighlightTime * 1000
-								
-								
-								
-								// if(isMedalTimeGoodsId==""){
-								// 	$(".medal-box").show();
-								// 	isMedalTimeGoodsId = data.data.liveGoodsLinkList[i].brandId
-								// 	medalTimer(delayed);
-								// }
-								// else if(isMedalTimeGoodsId!=data.data.liveGoodsLinkList[i].brandId){
-								// 	$(".medal-box").show();
-								// 	isMedalTimeGoodsId = data.data.liveGoodsLinkList[i].brandId
-								// 	medalTimer(delayed);
-								// }
-								
-								
-								
-								// if (isMedalTimeGoodsId != data.data.liveGoodsLinkList[i].liveGoodsId) {
-								// 	if (isMedalTimer == 0) {
-								// 		$(".medal-box").show();
-								// 		isMedalTimer = 1;
-								// 		isMedalTimeGoodsId = data.data.liveGoodsLinkList[i].liveGoodsId
-								// 		medalTimer(delayed);
-								// 	}
-								// }
+								$(".medal-text-box").text(data.data.liveGoodsLinkList[i].liveGoodsIndex
+									.businessMerchantName)
+								$(".medal-button").remove("οnclick");
+								$(".medal-button").attr("onclick", "receiveMedal(\"" + data.data.liveGoodsLinkList[
+										i]
+									.liveGoodsIndex.liveGoodsId + "\")")
+								var delayed = data.data.liveGoodsLinkList[i].assembleMedalHighlightTime * 1000
+								if (isMedalTimeGoodsId != data.data.liveGoodsLinkList[i].liveGoodsId) {
+									if (isMedalTimer == 0) {
+										$(".medal-box").show();
+										isMedalTimer = 1;
+										isMedalTimeGoodsId = data.data.liveGoodsLinkList[i].liveGoodsId
+										medalTimer(delayed);
+									}
+								}
 								// var time = setInterval(function () {
 								// 	$(".medal-box").hide()
 								// 	clearTimeout(time);
@@ -2409,10 +2100,10 @@
 							GOODS_DEFAULT_ID=data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId
 							//正在砍价修改背景色  并拉宽
 							html += '<div class="goods-list-item ' + data.data.liveGoodsLinkList[i].liveGoodsId +
-								'" style="width:1rem" onclick="goodsDetail(\'' + data
+								'" style="width:1.5rem" onclick="goodsDetail(\'' + data
 								.data.liveGoodsLinkList[
 									i].liveGoodsId + '\')">';
-							html += '<div style="background-color:#7A7A7A" dom=' + data.data.liveGoodsLinkList[i]
+							html += '<div style="background-color:#CFA972" dom=' + data.data.liveGoodsLinkList[i]
 								.liveStatus + '   class="goods-list-item-title" id="' + data
 								.data.liveGoodsLinkList[i].liveGoodsId + '">';
 						} else {
@@ -2424,8 +2115,8 @@
 								.liveGoodsId + '">';
 						}
 
-                        
-						html +='<div class="xuhao">' +'<p>' +(i+1)+'</p>'+'</div>'+'<p>' + data.data.liveGoodsLinkList[i].liveGoodsIndex.businessMerchantName+ '</p>' +
+
+						html += '<p>' + data.data.liveGoodsLinkList[i].liveGoodsIndex.businessMerchantName+ '</p>' +
 							'</div>	' +
 							'<div class="goods-list-item-img"  >' +
 							'<img src="'+ data.data
@@ -2445,7 +2136,7 @@
 						} else {
 							// $(".goods-list-box div").eq(i).css("width", "1.5rem");
 							$(".goods-list-box div").eq(i).children(".goods-list-item-title").css("background",
-								"#7A7A7A");
+								"#CFA972");
 						}
 					}
 				} else {
@@ -2456,9 +2147,9 @@
 							$(".goods-list-box div").eq(i).children(".goods-list-item-title").css("background",
 								"#7A7A7A");
 						} else {
-							$(".goods-list-box div").eq(i).css("width", "1rem");
+							$(".goods-list-box div").eq(i).css("width", "1.5rem");
 							$(".goods-list-box div").eq(i).children(".goods-list-item-title").css("background",
-								"#7A7A7A");
+								"#CFA972");
 						}
 					}
 				}
@@ -2629,11 +2320,11 @@
 	}
 	goodslist()
 	//商品列表
-	// $(function () {
-	// 	var time = setInterval(function () {
-	// 		goodslist()
-	// 	}, 30000);
-	// })
+	$(function () {
+		var time = setInterval(function () {
+			goodslist()
+		}, 30000);
+	})
 
 	// var gifTimeStart = 0;
 	// $(function() {
@@ -2651,8 +2342,8 @@
 			token_id: token_val_id
 		}, function (data) {
 			if (data.ret == "200") {
-				$(".zaixianrenshu").html(data.data.viewersNum + " 人在线");
-				// $("#inteNum").html(data.data.interactiveNum + "人正在互动");
+				$("#watchNum").html(data.data.viewersNum + " 人正在观看");
+				$("#inteNum").html(data.data.interactiveNum + "人正在互动");
 				$("#giveNum").html(data.data.likeCount);
 				$("#shareNum").html(data.data.shareNum);
 				$("#orderNum").html(data.data.orderNum);
@@ -3331,7 +3022,43 @@
 		$(".activity-explain-box").show()
 	}
 </script>
+<script>
+	/**
+	 * 点量勋章调用接口
+	 * @param {Object} id 勋章Id
+	 */
+	function receiveMedal(id) {
+		$.post(API_ROOT + "/client/receive/assemble/medal", {
+			token_id: token_val_id,
+			liveId: live_val_Id,
+			liveGoodsId: id
+		}, function (data) {
+			if (data.ret == 200) {
+				// alert("点亮成功");
+				layer.open({
+					title: ['提示', 'background-color:#8DCE16; color:#fff;'],
+					content: '点亮成功',
+					btn: ['确认'],
+					yes: function (index) {
+						// location.href = location.href;
+						$(".layui-m-layer").hide();
+					}
+				});
+				$(".medal-img-box").hide();
+				$(".medal-img-box1").show();
+				// $(".medal-button").hide();
+				var time = setInterval(function () {
+					$(".medal-box").hide();
+					clearInterval(time);
+				}, 500);
+				isMedalTimer = 0;
 
+			} else {
+				// alert(data.msg)
+			}
+		})
+	}
+</script>
 <script>
 	//进入页面时默认将聊天框内容拉到最下方
 	$.post(API_ROOT + "/client/live/smstext", {
@@ -3372,38 +3099,6 @@
 	}
 </script>
 <script>
-	
-	
-
-	
-	//判断是否点亮过勋章
-	// function liveDesc() {
-	// 	$.post(API_ROOT + "/client/select/receive/brand/medal", {
-	// 		liveId: live_val_Id,
-	// 		token_id: token_val_id
-	// 	}, function (data) {
-	// 		if (data.ret == "200") {
-	// 			$(".notice-text-box>marquee").text(data.data.liveIndex.carouselDesc)
-				
-	// 		} else {
-	// 			// alert(data.msg)
-	// 			console.log("")
-	// 		}
-	// 	})
-	// }
-	
-	// $(function () {
-	// 	var time = setInterval(function () {
-	// 		//60秒刷新一次飞播文字
-	// 		liveDesc()
-	// 	}, 180000);
-	// })
-	
-	
-	
-	
-	
-	
 	/**
 	 * 直播飞播文字
 	 */
@@ -3414,7 +3109,6 @@
 		}, function (data) {
 			if (data.ret == "200") {
 				$(".notice-text-box>marquee").text(data.data.liveIndex.carouselDesc)
-				
 			} else {
 				// alert(data.msg)
 				console.log("")
@@ -3428,176 +3122,6 @@
 			liveDesc()
 		}, 180000);
 	})
-	
-	//获取砍价师信息
-	kanjiashi();
-	
-	function kanjiashi() {
-		$.post(API_ROOT + "/client/live/details", {
-			liveId: live_val_Id,
-			token_id: token_val_id
-		}, function (data) {
-			if (data.ret == "200") {
-				
-				if(data.data.liveIndex.hostHeadPortraitUrl!=null&&data.data.liveIndex.hostHeadPortraitUrl!=""){
-					$(".kanjiashi-touxiang").attr("src",data.data.liveIndex.hostHeadPortraitUrl)
-				}
-				else{
-					$(".kanjiashi-touxiang").attr("src",'../images/touxiang.png')
-				}
-				
-				
-				if(data.data.liveIndex.hostUserName!=null&&data.data.liveIndex.hostUserName!=""){
-					$(".kanjiashi-name").text(data.data.liveIndex.hostUserName)
-				}
-				else{
-					$(".kanjiashi-name").text("未知")
-				}
-				
-				
-			} else {
-				// alert(data.msg)
-				console.log("")
-			}
-		})
-	}
-	
-
-	
-	
-	//进来先调一次
-	liveingBrand();
-	
-	//正在砍价的品牌信息
-	function liveingBrand() {
-		$.post(API_ROOT + "/client/live/bargaining/brand", {
-			liveId: live_val_Id,
-			token_id: token_val_id
-		}, function (data) {
-			if (data.ret == "200") {
-				//如果当前有正在砍价的商品
-				if(data.data.liveGoodsLink!=null){
-					
-					
-					if(data.data.newBrand.brandIntroduceUserName!=null&&data.data.newBrand.brandIntroduceUserName!=""){
-						$(".daogou-name").text(data.data.newBrand.brandIntroduceUserName);
-					}
-					else{
-						$(".daogou-name").text("未知");
-					}
-					
-					
-					if(data.data.newBrand.brandIntroducePosition!=null&&data.data.newBrand.brandIntroducePosition!=""){
-						$(".daogou_shenfen").text(data.data.newBrand.brandIntroducePosition);
-					}
-					else{
-						$(".daogou_shenfen").text("未知");
-					}
-					
-					if(data.data.newBrand.brandIntroduceHeadPortraitUrl!=null&&data.data.newBrand.brandIntroduceHeadPortraitUrl!=""){
-						$(".daogou-touxiang").attr("src",data.data.newBrand.brandIntroduceHeadPortraitUrl)
-					}
-					else{
-						$(".daogou-touxiang").attr("src",'../images/touxiang.png')
-					}
-					
-					// 动态改变勋章上的砍价商品序号
-					for (var i = 0; i < LivingGoodsNum.length; i++) {
-						if(data.data.liveGoodsLink.liveGoodsId==LivingGoodsNum[i]){
-							$(".living-goods-num").text(i+1)
-						}
-					}
-
-					//有正在砍价的商品，则显示勋章,显示品牌信息
-					$(".medal-box").show()
-					$(".top-tips-right").show()
-					$(".living-brand-img").attr("src","http://hb.shushangsoft.com/image/show/?loginOs=0&imgType=&fileId=" + data.data.newBrand.brandLogo)
-					
-					//判断是否点击过改勋章
-					$.post(API_ROOT + "/client/select/receive/brand/medal", {
-						liveId: live_val_Id,
-						token_id: token_val_id,
-						brandId:data.data.newBrand.id
-					}, function (data2) {
-						if (data2.ret == "200") {
-							// 未点亮
-							if(data2.data==-1){
-								let src='../images/xunzhang-weiianliang.png'
-								$('.medal-box ').css("background-image","url("+src+")" )
-								$('.medal-box ').click(function(){
-									receiveMedal(data.data.liveGoodsLink.liveGoodsId)
-								})
-							}
-							//已点亮
-							else if(data2.data==1){
-								let src='../images/xunzhang-yidianliang.png'
-								$('.medal-box ').css("background-image","url("+src+")" )
-							}
-							
-						} else {
-							// alert(data.msg)
-							console.log("")
-						}
-					})
-					
-					
-					
-				}
-				//如果当前没有正在砍价的商品，则隐藏右侧品牌信息和勋章
-				else{
-					$(".top-tips-right").hide()
-					$(".medal-box").hide()
-				}
-				
-			} else {
-				// alert(data.msg)
-				console.log("data.msg")
-			}
-		})
-	}
-	
-	$(function () {
-		var time = setInterval(function () {
-			//30秒刷新一次砍价的品牌信息
-			liveingBrand()
-		}, 30000);
-	})
-	
-	
-	/**
-	 * 点量勋章调用接口
-	 * @param {Object} id 勋章Id
-	 */
-	function receiveMedal(id) {
-		$.post(API_ROOT + "/client/receive/assemble/medal", {
-			token_id: token_val_id,
-			liveId: live_val_Id,
-			liveGoodsId: id
-		}, function (data) {
-			if (data.ret == 200) {
-				layer.open({
-					title: ['提示', 'background-color:#8DCE16; color:#fff;'],
-					content: '点亮成功',
-					btn: ['确认'],
-					yes: function (index) {
-						// location.href = location.href;
-						$(".layui-m-layer").hide();
-						$('.medal-box ').css("background-image","url("+src+")" )
-					}
-				});
-				
-	
-			} else {
-				alert(data.msg)
-			}
-		})
-	}
-	
-	
-	
-	
-	
-	
 </script>
 <script>
 	//邀约心跳接口   确认当前人是否还在观看直播
@@ -3667,23 +3191,23 @@
 	}
 </script>
 <script>
-	// function medalTimer(delayed) {
-	// 	var time = setInterval(function () {
-	// 		$(".medal-box").hide();
-	// 		isMedalTimer = 0;
-	// 		clearTimeout(time);
-	// 	}, delayed);
-	// }
+	function medalTimer(delayed) {
+		var time = setInterval(function () {
+			$(".medal-box").hide();
+			isMedalTimer = 0;
+			clearTimeout(time);
+		}, delayed);
+	}
 </script>
 <script>
 	var rollWidth = 0;
-    goodslistSjs();
+
 	function goodslistSjs() {
 		$.post(API_ROOT + "/client/live/goodslist", {
 			liveId: live_val_Id,
 			token_id: token_val_id
 		}, function (data) {
-			console.log("goodslistSjs");
+			// console.log(data);
 			if (data.ret == "200") {
 				for (var i = 0; i < data.data.liveGoodsLinkList.length; i++) {
 					if (data.data.liveGoodsLinkList[i].liveStatus == 10) {
@@ -3692,7 +3216,6 @@
 							//未完成砍价时  商品金额为问号
 							data.data.liveGoodsLinkList[i].liveGoodsIndex.livePrice = "???";
 						}
-						GOODS_DEFAULT_ID=data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId
 						var goodsDesc = ""
 						goodsDesc +=
 							'<div class="goods-img-box" onclick="goodsBox(\'' +
@@ -3749,15 +3272,15 @@
 									tempRollWidth = rollWidth
 								}
 								if (goodsList[i2].liveStatus == 0 || goodsList[i2].liveStatus == 30) {
-									// $("#" + goodsList[i2].liveGoodsIndex.liveGoodsId).css("background", "#7A7A7A");
+									$("#" + goodsList[i2].liveGoodsIndex.liveGoodsId).css("background", "#7A7A7A");
 								} else {
 									rollWidth += $("#" + goodsList[i2].liveGoodsIndex.liveGoodsId).width();
-									// $("#" + goodsList[i2].liveGoodsIndex.liveGoodsId).css("background", "#7A7A7A");
+									$("#" + goodsList[i2].liveGoodsIndex.liveGoodsId).css("background", "#CFA972");
 								}
 							}
 						}
 						selectGoodsId = data.data.liveGoodsLinkList[i].liveGoodsIndex.liveGoodsId;
-						// $("#" + selectGoodsId).css("background", "#7A7A7A");
+						$("#" + selectGoodsId).css("background", "#1888FF");
 						$(".goods-details-box").html(goodsDesc);
 						// if(live_val_Id=="dc6da6d0ca9e42aa96064280d1ef1fc0"){
 						// 	$(".order-img").hide()

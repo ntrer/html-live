@@ -2,9 +2,8 @@
 // var live_val_Id = "38510810284a42f19b243153a6d71e83";
 // var token_val_id= "testbbc001tokenid";
 
-// var API_ROOT = location.origin;
-// var API_ROOT = "http://hb.shushangsoft.com"
-var API_ROOT = "http://47.114.181.11:48730"
+var API_ROOT = location.origin;
+
 var live_val_Id = getQueryString("liveId");
 var token_val_id = getQueryString("token_id");
 var TAB_MESSAGE = getQueryString("tab");
@@ -54,8 +53,7 @@ function getQueryString(key) {
 	return result[1];
 }
 
-var latitude = "0";
-var longitude = "0";
+
 function loadDefaultLiveShareSettings() {
 	$.post(API_ROOT + '/client/live/share', {
 		url: location.href.split('#')[0],
@@ -109,21 +107,6 @@ function loadDefaultLiveShareSettings() {
 				cancel: function () {
 
 				}
-			});
-			
-			wx.getLocation({
-				type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-				success: function(res) {
-					latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-					longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-					//var speed = res.speed; // 速度，以米/每秒计
-					//var accuracy = res.accuracy; // 位置精度
-					console.log("那是空间吧会计师不分开"+latitude)
-				},
-				fail: function(res) {
-					console.log("那是空间吧会计师不分开"+res)
-				},
-				cancel: function(res) {}
 			});
 		});
 	});
