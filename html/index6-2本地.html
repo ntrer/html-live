@@ -826,95 +826,88 @@
 		}
 		
 		.xuhao{
-			    background-image: url(../images/xuhao_tubiao.png);
-				background-size: 100% 120%;
+			background-color: red;
 			    position: absolute;
-			    left: 0rem;
-				top: 0rem;
-			    width: 0.28rem;
-			    height: 0.28rem;
+			    left: -0.1rem;
+			    top: -0.1rem;
+			    width: 0.25rem;
+			    height: 0.25rem;
 			    text-align: center;
 			    display: flex;
 			    align-items: center;
+			    border-radius: 50px;
 		}
 		
 		.xuhao p{
 			margin-left: 0;
 			margin-bottom: 0.05rem;
-			margin-right: 0.1rem;
 		}
-		
 		
 		.goods-list-box{
 			margin: 2.0% 5%;
-			padding: 0.15rem 0.15rem 0rem 0.15rem;
+			padding: 1.5% 1.5%;
 		}
 		
 		.top-tips-left{
-			    margin-left: 0.1rem;
-			        margin-right: auto;
-			        display: flex;
-			        flex-direction: row;
-			        margin-top: 0.1rem;
-			        width: 1.83rem;
-			        height: 0.48rem;
-			        background: rgba(255,255,255,0.5);
-			        border-radius: 0.5rem;
-			        align-items: center;
+			margin-left: 0.1rem;
+			    margin-right: auto;
+			    display: flex;
+			    flex-direction: row;
+			    margin-top: 0.1rem;
+			    width: 2rem;
+			    height: 0.5rem;
+			    background: rgba(255,255,255,0.5);
+			    border-radius: 0.5rem;
+				align-items: center;
 		}
 		
 		.top-tips-right{
-			   margin-left: 0.1rem;
-			       display: flex;
-			       flex-direction: row;
-			       margin-top: 0.1rem;
-			       min-width: 1.5rem;
-			       max-width: 1.7rem;
-			       height: 0.48rem;
-			       background: rgba(255,255,255,0.5);
-			       border-radius: 0.5rem;
-			       align-items: center;
+			    margin-left: 0.1rem;
+			    display: flex;
+			    flex-direction: row;
+			    margin-top: 0.1rem;
+				min-width: 2rem;
+				max-width: 2.3rem;
+			    height: 0.5rem;
+			    background: rgba(255,255,255,0.5);
+			    border-radius: 0.5rem;
+				align-items: center;
 		}
 		
 		.kanjiashi-touxiang{
-			width: 0.45rem;
-			    height: 0.45rem;
-			    border-radius: 1rem;
+			width: 0.5rem;
+			height: 0.5rem;
 		}
 		
 		.daogou-touxiang{
-			width: 0.45rem;
-			    height: 0.45rem;
-			    border-radius: 1rem;
+			width: 0.5rem;
+			height: 0.5rem;
 		}
 		
 		.kanjiashi-name{
-			margin-left: 0.1rem;
-			    font-size: 0.18rem;
+			margin-left: 0.2rem;
+			    font-size: 0.2rem;
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
 		}
 		.zaixianrenshu{
-			margin-left: 0.1rem;
+			margin-left: 0.2rem;
 			    font-size: 0.15rem;
-			    margin-top: 0.05rem;
-				overflow: hidden;
-				    text-overflow: ellipsis;
-				    white-space: nowrap;
+			    margin-top: 0.06rem;
 		}
 		
 		.daogou-name{
-			margin-left: 0.1rem;
-			    font-size: 0.18rem;
+			margin-left: 0.2rem;
+			    font-size: 0.2rem;
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
 		}
 		.daogou_shenfen{
-			margin-left: 0.1rem;
+			margin-left: 0.2rem;
 			    font-size: 0.15rem;
-			    margin-top: 0.05rem;
+			    margin-top: 0.06rem;
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
@@ -943,7 +936,7 @@
 		
 		.living-brand-img{
 			    width: 0.8rem;
-			        height: 0.4rem;
+			        height: 0.5rem;
 			        position: absolute;
 			        top: 0.4rem;
 			        left: 0.25rem;
@@ -955,24 +948,10 @@
 			justify-content: center;
 		}
 		
-		.error{
-			position: fixed;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			background-image: url(../images/error.jpg);
-			background-size: 100% 100%;
-			z-index: 999999;
-		}
-		
 	</style>
 </head>
 
 <body>
-
 	<div class="top-tips-box">
 		<div class="top-tips-left">
 			<img src="" alt="" class="kanjiashi-touxiang">
@@ -990,6 +969,7 @@
 			
 		</div>
 	</div>
+	
 	
 
 	<!-- 播放器容器 -->
@@ -1057,7 +1037,7 @@
 
 	<div style="overflow: hidden;">
 		<ul class="chat-center">
-			<li class="chat-center-l" id="chatRecord" style="height: 3.6rem;">
+			<li class="chat-center-l" id="chatRecord" style="height: 3.5rem;">
 			</li>
 		</ul>
 	</div>
@@ -1457,8 +1437,6 @@
 			<span class="redSendText">即将发送到微信零钱</span>
 		</div>
 	</div>
-	
-	<div class="error" style="display: none;"></div>
 </body>
 
 </html>
@@ -1467,7 +1445,7 @@
 <script type="text/javascript" src="./../js/ThreeCanvas.js?edition=201911231625"></script>
 <script type="text/javascript" src="./../js/Snow.js?edition=201911231625"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js?edition=201911231625" type="text/javascript"></script>
-<script src="../js/common.js?edition=20200602"></script>
+<script src="../js/common.js?edition=202004281"></script>
 <script>
 	loadDefaultLiveShareSettings();
 	$(document).ready(function() {
@@ -1489,17 +1467,6 @@
 			});
 		})
 	})
-	
-	if(live_val_Id=="dc6e31d2e39549719ca12e2f4b608c29"){
-		$(".error").show()
-		$(".bottomBar").hide()
-	}
-	else{
-		$(".error").hide()
-		$(".bottomBar").show()
-	}
-	
-	
 
 </script>
 
@@ -1964,7 +1931,7 @@
 					'		</div> ' +
 					'	</div> ' +
 					'	<div class="goods-order-box"> ' +
-					'		本次订金价格为' + data.data.liveGoodsLink
+					'		本次定金价格为' + data.data.liveGoodsLink
 					.liveGoodsIndex.reservePrice + '元 ' +
 					'	</div> ' +
 					'</div> ' +
@@ -2213,7 +2180,7 @@
 						'  </div> ' +
 						' </div> ' +
 						' <div class="goods-order-box"> ' +
-						'  本次订金价格为' + data.data.liveGoodsLink
+						'  本次定金价格为' + data.data.liveGoodsLink
 						.liveGoodsIndex.reservePrice + '元 ' +
 						' </div> ' +
 						'</div> ' +
@@ -2280,19 +2247,6 @@
 			token_id: token_val_id
 		}, function (data) {
 			if (data.ret == "200") {
-				
-				var endDate = new Date(data.data.liveIndex.globleTo.replace(/\-/g, '/'));
-				var nowDate = new Date();
-				if(endDate-nowDate<=0){
-					$(".error").show()
-					$(".bottomBar").hide()
-				}
-				else{
-					$(".error").hide()
-					$(".bottomBar").show()
-				}
-				
-				
 				$('title').html(data.data.liveIndex.title);
 				// var liveImg = API_ROOT + "/image/show/?loginOs=0&imgType=&fileId=" + data.data.liveIndex.liveLogoImageId;
 
@@ -2312,7 +2266,8 @@
 
 					"poster": {
 						"style": "stretch",
-						"src": API_ROOT + "/image/show/?loginOs=0&imgType=&fileId=" + data.data.liveIndex.liveLogoImageId
+						"src": API_ROOT + "/image/show/?loginOs=0&imgType=&fileId=" + data.data
+							.liveIndex.liveLogoImageId
 					},
 					// "width": '1000', //视频的显示宽度，请尽量使用视频分辨率宽度
 					// "height": '200', //视频的显示高度，请尽量使用视频分辨率高度
@@ -2326,7 +2281,7 @@
 
 				window.tcplayer = new TcPlayer('live-box', options);
 
-                // console.log(API_ROOT + "/image/show/?loginOs=0&imgType=&fileId=" + data.data.liveIndex.liveLogoImageId)
+
 				//以下属性修改时请先注释  不要直接删除 留好代码还原的余地
 				$('video').attr('x5-video-player-type', 'h5-page');
 				$('video').attr("playsinline", "");
@@ -2478,7 +2433,7 @@
 						}
 
                         
-						html +='<div class="xuhao">' +'<p class="xuhao-text">' +(i+1)+'</p>'+'</div>'+'<p>' + data.data.liveGoodsLinkList[i].liveGoodsIndex.businessMerchantName+ '</p>' +
+						html +='<div class="xuhao">' +'<p>' +(i+1)+'</p>'+'</div>'+'<p>' + data.data.liveGoodsLinkList[i].liveGoodsIndex.businessMerchantName+ '</p>' +
 							'</div>	' +
 							'<div class="goods-list-item-img"  >' +
 							'<img src="'+ data.data
@@ -2554,7 +2509,7 @@
 						'		</div> ' +
 						'	</div> ' +
 						'	<div class="goods-order-box"> ' +
-						'		本次订金价格为' + data.data.liveGoodsLinkList[0].liveGoodsIndex.reservePrice + '元 ' +
+						'		本次定金价格为' + data.data.liveGoodsLinkList[0].liveGoodsIndex.reservePrice + '元 ' +
 						'	</div> ' +
 						'</div> ' +
 						'<div class="order-img"> ' +
@@ -2625,7 +2580,7 @@
 						'		</div> ' +
 						'	</div> ' +
 						'	<div class="goods-order-box"> ' +
-						'		本次订金价格为' + data.data.liveGoodsLinkList[GOODS_DEFAULT_INDEX].liveGoodsIndex
+						'		本次定金价格为' + data.data.liveGoodsLinkList[GOODS_DEFAULT_INDEX].liveGoodsIndex
 						.reservePrice + '元 ' +
 						'	</div> ' +
 						'</div> ' +
@@ -3527,6 +3482,7 @@
 				//如果当前有正在砍价的商品
 				if(data.data.liveGoodsLink!=null){
 					
+					
 					if(data.data.newBrand.brandIntroduceUserName!=null&&data.data.newBrand.brandIntroduceUserName!=""){
 						$(".daogou-name").text(data.data.newBrand.brandIntroduceUserName);
 					}
@@ -3557,13 +3513,7 @@
 					}
 
 					//有正在砍价的商品，则显示勋章,显示品牌信息
-					if(data.data.liveGoodsLink.isOpenAssembleMedal==1){
-						$(".medal-box").show()
-					}
-					else{
-						$(".medal-box").hide()
-					}
-					
+					$(".medal-box").show()
 					$(".top-tips-right").show()
 					$(".living-brand-img").attr("src","http://hb.shushangsoft.com/image/show/?loginOs=0&imgType=&fileId=" + data.data.newBrand.brandLogo)
 					
@@ -3793,7 +3743,7 @@
 							'		</div> ' +
 							'	</div> ' +
 							'	<div class="goods-order-box"> ' +
-							'		本次订金价格为' + data.data.liveGoodsLinkList[i].liveGoodsIndex.reservePrice + '元 ' +
+							'		本次定金价格为' + data.data.liveGoodsLinkList[i].liveGoodsIndex.reservePrice + '元 ' +
 							'	</div> ' +
 							'</div> ' +
 							'<div class="order-img"> ' +

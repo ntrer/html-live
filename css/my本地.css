@@ -19,6 +19,7 @@ body {
     height: 100%;
     background-size: 100% 100%;
     width: 100%;
+    /* overflow: hidden; */
     background-attachment: fixed;
 }
 
@@ -125,8 +126,7 @@ body {
     margin: 0.05rem;
     display: flex;
     border-bottom: 0.02rem solid #EDEDED;
-	align-items: center;
-
+    align-items: center;
 }
 
 .order-img {

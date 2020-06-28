@@ -3,8 +3,8 @@
 // var token_val_id= "testbbc001tokenid";
 
 // var API_ROOT = location.origin;
-// var API_ROOT = "http://hb.shushangsoft.com"
-var API_ROOT = "http://47.114.181.11:48730"
+var API_ROOT = "http://bghb.shushangsoft.com"
+// var API_ROOT = "http://47.114.181.11:48730"
 var live_val_Id = getQueryString("liveId");
 var token_val_id = getQueryString("token_id");
 var TAB_MESSAGE = getQueryString("tab");

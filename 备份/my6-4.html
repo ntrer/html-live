@@ -282,10 +282,6 @@
                         '<div class="order-shop">' +
                         '<b>' + data.data.liveGoodsOrderList[i].liveGoods
                         .title + '</b>' +
-						'<p>品牌:' + data.data.liveGoodsOrderList[i].liveGoods
-                        .businessMerchantName+ '</p>'+
-						'<p>店铺地址:' + data.data.liveGoodsOrderList[i].liveGoods
-						.address+ '</p>'+
                         '<span>订单编号:' + data.data.liveGoodsOrderList[i].liveGoodsOrderIdStr +
                         '</span>' +
                         '<p>下单时间:' + data.data.liveGoodsOrderList[i].createTime + '</p>' +
@@ -319,9 +315,10 @@
 	   }, function (data) {
 	       if (data.ret == "200") {
 	           for (var i = 0; i < data.data.list.length; i++) {
+				   var phone=resetPhone(data.data.list[i].mobileNumber)
 	              html+= '<div class="mingdan-content">'+'<div class="zhongjiang-name">'+data.data.list[i].grade+'--'+'</div>'+
 	           		       '<div class="zhongjiang-phone">'+data.data.list[i].userName+'--'+'</div>'  +
-						   '<div class="zhongjiang-phone">'+data.data.list[i].mobileNumber+'</div>'  
+						   '<div class="zhongjiang-phone">'+phone+'</div>'  
 						   +'</div>' 
 	           } 
 			    $(".my-wrap").mLoading("hide");
@@ -335,6 +332,27 @@
 	   
 
    }
+   
+   
+   function resetPhone(phone) {
+     var str = String(phone)
+     var len = str.length;
+     var prev,next;
+     if (len >= 7) {
+       prev = str.slice(-len,-7)
+       next = str.slice(-3)
+       str = prev+"****"+next
+     } else if (len < 7 && len >= 6) {
+       prev = str.slice(-len,-4)
+       next = str.slice(-2)
+       str = prev + "**" + next
+     }
+     console.log(str)
+     return str
+   }
+   
+   
+   
 </script>
 <script>
     function returnPageIndex() {

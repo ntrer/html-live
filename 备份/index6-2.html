@@ -1467,7 +1467,7 @@
 <script type="text/javascript" src="./../js/ThreeCanvas.js?edition=201911231625"></script>
 <script type="text/javascript" src="./../js/Snow.js?edition=201911231625"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js?edition=201911231625" type="text/javascript"></script>
-<script src="../js/common.js?edition=20200602"></script>
+<script src="../js/common.js?edition=202004281"></script>
 <script>
 	loadDefaultLiveShareSettings();
 	$(document).ready(function() {
@@ -2288,7 +2288,7 @@
 					$(".bottomBar").hide()
 				}
 				else{
-					$(".error").hide()
+					$(".error").hide()()
 					$(".bottomBar").show()
 				}
 				
@@ -3527,6 +3527,7 @@
 				//如果当前有正在砍价的商品
 				if(data.data.liveGoodsLink!=null){
 					
+					
 					if(data.data.newBrand.brandIntroduceUserName!=null&&data.data.newBrand.brandIntroduceUserName!=""){
 						$(".daogou-name").text(data.data.newBrand.brandIntroduceUserName);
 					}
@@ -3557,13 +3558,7 @@
 					}
 
 					//有正在砍价的商品，则显示勋章,显示品牌信息
-					if(data.data.liveGoodsLink.isOpenAssembleMedal==1){
-						$(".medal-box").show()
-					}
-					else{
-						$(".medal-box").hide()
-					}
-					
+					$(".medal-box").show()
 					$(".top-tips-right").show()
 					$(".living-brand-img").attr("src","http://hb.shushangsoft.com/image/show/?loginOs=0&imgType=&fileId=" + data.data.newBrand.brandLogo)
 					
